@@ -8,4 +8,9 @@ public class GameManagerScript : MonoBehaviour {
     {
         SceneManager.LoadScene(0);
     }
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 }
