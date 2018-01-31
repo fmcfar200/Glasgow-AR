@@ -686,8 +686,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1530228975}
   - component: {fileID: 1530228974}
-  - component: {fileID: 1530228973}
   - component: {fileID: 1530228976}
+  - component: {fileID: 1530228973}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -716,12 +716,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1530228972}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd961b1c9541a4cee99686069ecce852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _latitudeLongitudeString: 55.8174004923018, -4.53325570033887
+  _latitudeLongitudeString: set from build map comp
   _zoom: 18
   _root: {fileID: 0}
   _tileProvider: {fileID: 1530228973}

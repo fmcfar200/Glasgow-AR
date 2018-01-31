@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Mapbox/Examples/LocationProvider/LocationProvider.unity
+- path: Assets/Scenes/Map Scene.unity
   isLoaded: 1
   isActive: 1
