@@ -12,22 +12,22 @@ public class GPSLocation : MonoBehaviour {
 	void Start ()
     {
         //starts test on init
-        StartCoroutine(TestLocServices());
+        //StartCoroutine(TestLocServices());
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-		while(Input.location.status == LocationServiceStatus.Running)
+		if(Input.location.status == LocationServiceStatus.Running)
         {
             lat = Input.location.lastData.latitude;
             lon = Input.location.lastData.longitude;
 
-            infoText.text = "Location: " + lat + "  " + lon;
         }
 
-        
-	}
+        infoText.text = "Location: " + lat + "  " + lon;
+
+    }
 
     IEnumerator TestLocServices()
     {
