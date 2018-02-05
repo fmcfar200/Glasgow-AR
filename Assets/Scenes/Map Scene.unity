@@ -235,7 +235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 171, y: 351}
+  m_AnchoredPosition: {x: 304, y: 595}
   m_SizeDelta: {x: 100, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &456688447
@@ -365,6 +365,80 @@ Transform:
   m_Father: {fileID: 842715095}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &739390811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 739390812}
+  - component: {fileID: 739390814}
+  - component: {fileID: 739390813}
+  m_Layer: 5
+  m_Name: Location Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &739390812
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 739390811}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1136908724}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -81.5, y: 619.9}
+  m_SizeDelta: {x: 602.2, y: 62.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &739390813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 739390811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Location Text
+--- !u!222 &739390814
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 739390811}
 --- !u!1 &842715093
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -627,6 +701,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 456688446}
+  - {fileID: 739390812}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -722,7 +797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _latitudeLongitudeString: set from build map comp
-  _zoom: 18
+  _zoom: 16
   _root: {fileID: 0}
   _tileProvider: {fileID: 1530228973}
   _mapVisualizer: {fileID: 11400000, guid: 5a059c85a964540439bb47d30261c477, type: 2}
@@ -766,6 +841,7 @@ GameObject:
   - component: {fileID: 1674138740}
   - component: {fileID: 1674138745}
   - component: {fileID: 1674138744}
+  - component: {fileID: 1674138746}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -868,6 +944,20 @@ MonoBehaviour:
   _map: {fileID: 1530228974}
   _positionFollowFactor: 2
   _useTransformLocationProvider: 0
+--- !u!114 &1674138746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1674138739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fefd9b60fa33a4abb43cf193614b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lat: 0
+  lon: 0
+  infoText: {fileID: 739390813}
 --- !u!1 &1723143099
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60712efc3153a4819b0c79437175846d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _latitudeLongitude: 37.784328, -122.40364
+  _latitudeLongitude: 55.817137, -4.533354
   _heading: 0
 --- !u!4 &1723143101
 Transform:

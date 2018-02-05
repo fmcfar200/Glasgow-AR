@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Mapbox\Examples\LocationProvider\Scripts\BuildMapAtLocation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GPSLocation.cs">
     <Files>
       <File FileName="Assets\Scripts\GameManagerScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Mapbox\Examples\LocationProvider\Scripts\PositionWithLocationProvider.cs" Line="1" Column="1" />
       <File FileName="Assets\Mapbox\Examples\LocationProvider\Scripts\BuildMapAtLocation.cs" Line="1" Column="1" />
+      <File FileName="Assets\Mapbox\Examples\LocationProvider\Scripts\RotateWithLocationProvider.cs" Line="1" Column="1" />
+      <File FileName="Assets\GPSLocation.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
