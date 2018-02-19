@@ -102,7 +102,7 @@ public class EnemyLocation : MonoBehaviour
         //convert distance from double to float
         float distanceFloat = (float)distance;
         //set the target position of the ufo, this is where we lerp to in the update function
-        targetPosition = originalPosition - new Vector3(0, 0, distanceFloat * 12);
+        targetPosition = originalPosition - new Vector3(0, 0, distanceFloat);
         //distance was multiplied by 12 so I didn't have to walk that far to get the UFO to show up closer
 
     }
