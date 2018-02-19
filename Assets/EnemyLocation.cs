@@ -11,15 +11,15 @@ public class EnemyLocation : MonoBehaviour
 {
 
 
-    private float originalLatitude;
-    private float originalLongitude;
+    public float originalLatitude;
+    public float originalLongitude;
     private float currentLongitude;
     private float currentLatitude;
 
     public GameObject distanceTextObject;
     private double distance;
 
-    private bool setOriginalValues = true;
+    private bool setOriginalValues = false;
 
     private Vector3 targetPosition;
     private Vector3 originalPosition;

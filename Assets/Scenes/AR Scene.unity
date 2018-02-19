@@ -507,7 +507,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400078, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.33
+      value: 3.256
       objectReference: {fileID: 0}
     - target: {fileID: 400078, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1486,6 +1486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431909f2443c9b745a1a9ed35bb3fd67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originalLatitude: 55.817093
+  originalLongitude: -4.533495
   distanceTextObject: {fileID: 920541022}
 --- !u!114 &1860480808
 MonoBehaviour:
