@@ -283,9 +283,9 @@ PlayerSettings:
     m_Automatic: 0
   m_BuildTargetVRSettings:
   - m_BuildTarget: Android
-    m_Enabled: 0
+    m_Enabled: 1
     m_Devices:
-    - Oculus
+    - Vuforia
   - m_BuildTarget: Metro
     m_Enabled: 0
     m_Devices: []
@@ -309,9 +309,9 @@ PlayerSettings:
     m_Enabled: 0
     m_Devices: []
   - m_BuildTarget: Standalone
-    m_Enabled: 0
+    m_Enabled: 1
     m_Devices:
-    - Oculus
+    - Vuforia
   - m_BuildTarget: Tizen
     m_Enabled: 0
     m_Devices: []
@@ -331,8 +331,9 @@ PlayerSettings:
     m_Enabled: 0
     m_Devices: []
   - m_BuildTarget: iOS
-    m_Enabled: 0
-    m_Devices: []
+    m_Enabled: 1
+    m_Devices:
+    - Vuforia
   - m_BuildTarget: tvOS
     m_Enabled: 0
     m_Devices: []

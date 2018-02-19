@@ -16,8 +16,8 @@ MonoBehaviour:
     ufoLicenseKey: QVExclZCYi8vLy8vQUFBQUtNdGFVWlhzZTBOemt2eTZwWU1BTHFBaDE4NjdleURFOTFKQzlEMHh0dnpCTzVKYnAxQzRFT0cranN4RGxvV0VFc2hIQjloZTJ4bG9IUTN1Y3RjR2UvOG1GcXR6MWZxSW9mcmhxTEFzeUhPWWdFYU9vbFpKQ2xKeUozZENiWUxHRVpwQmhkRG41NEM0RVFUVzJvUUdteHR0R2hmaVlDZTZxRjArU3plSE9qcU14eHJ0aHFrME1iOCs5WEZWZWhQdTRnOGJvZmtCMDJudnhUSnh0d0hnL1Jod3Y0NnJwbHl1dDNVbjNpSENBSm9wVHg3UUMwTk5RTzRHcWN5azV3MWNiRTRKU0Q1bmNsVVNtWHpKaG0wTDB6UUR4UTlpaWtnSzRxZFhrSGhDdXhxOFJFZ3lhTTZFV1lHTm5mSThnN1Y3WDNYZXJxekdlU1lIL253NmdqdmpsT01qdzIwbGtIREhYa0tONGY5eWZrQ1c=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 1
-    maxSimultaneousObjectTargets: 1
+    maxSimultaneousImageTargets: 5
+    maxSimultaneousObjectTargets: 5
     useDelayedLoadingObjectTargets: 0
     cameraDirection: 0
     mirrorVideoBackground: 0
@@ -65,8 +65,8 @@ MonoBehaviour:
     trackingMode: 0
     posePrediction: 1
     modelCorrectionMode: 2
-    modelTransformEnabled: 0
-    modelTransform: {x: 0, y: 0.1, z: -0.1}
+    modelTransformEnabled: 1
+    modelTransform: {x: 0, y: 0, z: -0.1}
   webcam:
     deviceNameSetInEditor: 
     flipHorizontally: 0
