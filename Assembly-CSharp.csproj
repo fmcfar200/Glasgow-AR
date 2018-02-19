@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EnemyLocation.cs" />
      <Compile Include="Assets\GPSLocation.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\DirectionResource.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Directions.cs" />
@@ -261,7 +262,6 @@
      <Compile Include="Assets\Mapbox\Unity\Utilities\StyleSearchAttribute.cs" />
      <Compile Include="Assets\Mapbox\Unity\Utilities\TelemetryConfigurationButton.cs" />
      <Compile Include="Assets\Mapbox\Unity\Utilities\VectorExtensions.cs" />
-     <Compile Include="Assets\Models\Knight\scripts\rotator.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\GameManagerScript.cs" />
      <Compile Include="Assets\Scripts\PlayerCombatScript.cs" />
@@ -272,7 +272,6 @@
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\link.xml" />
      <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
-     <None Include="Assets\Models\Knight\shaders\particledistort.shader" />
      <None Include="Assets\Editor\Vuforia\VuforiaMars_VuMark\authoringinfo.xml" />
      <None Include="Assets\Mapbox\Fonts\OpenSansLic.txt" />
      <None Include="Assets\StreamingAssets\Vuforia\ImageDatabase.xml" />
@@ -283,10 +282,8 @@
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
      <None Include="Assets\Mapbox\Core\Plugins\link.xml" />
-     <None Include="Assets\Models\Knight\shaders\clothshader.shader" />
      <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Images.xml" />
      <None Include="Assets\Resources\Mapbox\MapboxConfiguration.txt" />
-     <None Include="Assets\Models\Knight\shaders\reflectAdd.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_VuMark.xml" />
      <None Include="Assets\Editor\Vuforia\CylinderTargetTextures\VuforiaMars_Images\authoringinfo.xml" />
