@@ -1486,8 +1486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431909f2443c9b745a1a9ed35bb3fd67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalLatitude: 55.817093
-  originalLongitude: -4.533495
+  originalLatitude: 55.817142
+  originalLongitude: -4.533521
   distanceTextObject: {fileID: 920541022}
 --- !u!114 &1860480808
 MonoBehaviour:
