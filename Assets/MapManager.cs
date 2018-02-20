@@ -59,6 +59,7 @@ public class MapManager : MonoBehaviour {
                 testObject.transform.position = enemyIconPos;
                 
                 enemyAmount++;
+                gameManager.GetComponent<GameManagerScript>().enemyAmount = enemyAmount;
           
           }
       }

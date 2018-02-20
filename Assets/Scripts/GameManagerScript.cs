@@ -8,7 +8,7 @@ public class GameManagerScript : MonoBehaviour {
 
     public static GameManagerScript manager;
     public GameObject testPrefab;
-
+    public int enemyAmount;
 
     Scene scene;
 
