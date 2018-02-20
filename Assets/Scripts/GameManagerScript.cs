@@ -8,8 +8,9 @@ public class GameManagerScript : MonoBehaviour {
 
     public static GameManagerScript manager;
     public GameObject testPrefab;
-    public int enemyAmount = 0;
 
+
+    Scene scene;
 
 	void Start()
 	{
@@ -24,7 +25,7 @@ public class GameManagerScript : MonoBehaviour {
             Destroy(gameObject);
         }
 
-		Scene scene = SceneManager.GetActiveScene ();
+		scene = SceneManager.GetActiveScene ();
 
 		if (scene.name == "AR Scene") {
 
@@ -35,17 +36,18 @@ public class GameManagerScript : MonoBehaviour {
 		{
 			Camera.main.GetComponent<VuforiaBehaviour> ().enabled = false;
 		}	
-
+        
 	}
+
+
 
 	public void ReloadScene()
     {
         SceneManager.LoadScene(0);
     }
 
-    public void LoadScene(string name)
+    public static void LoadScene(string name)
     {
         SceneManager.LoadScene(name);
     }
-
 }
