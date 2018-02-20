@@ -100,9 +100,6 @@
      <None Include="Assets\Editor\Vuforia\TargetsetData\VuforiaMars_Object_info.xml" />
      <None Include="Assets\Editor\Vuforia\ForPrint\ModelTarget\readme_3dprint.txt" />
      <None Include="Assets\Editor\Vuforia\CylinderTargetTextures\VuforiaMars_Images\authoringinfo.xml" />
- <Reference Include="Assembly-UnityScript-Editor-firstpass">
- <HintPath>C:/Users/Fraser/Documents/Unity Projects/AR Starter/AR-App/Library/ScriptAssemblies/Assembly-UnityScript-Editor-firstpass.dll</HintPath>
- </Reference>
  <Reference Include="Vuforia.UnityExtensions.Editor">
  <HintPath>C:/Program Files/Unity 2017.3.1/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
  </Reference>

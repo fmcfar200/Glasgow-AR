@@ -184,6 +184,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -844,7 +845,7 @@ GameObject:
   - component: {fileID: 1674138746}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: PlayerIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1071,6 +1072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1965980569}
   - component: {fileID: 1965980568}
+  - component: {fileID: 1965980570}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1102,3 +1104,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1965980570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1965980567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c4ac489c111a0d4fa6f0434445069bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  map: {fileID: 1530228974}

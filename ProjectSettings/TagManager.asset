@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Distance_Text
   - enemy
+  - PlayerIcon
   layers:
   - Default
   - TransparentFX
