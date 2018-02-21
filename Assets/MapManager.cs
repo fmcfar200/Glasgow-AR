@@ -97,7 +97,7 @@ public class MapManager : MonoBehaviour {
        
 
         Vector2d enemyLatLon = new Vector2d((double)pLat, (double)pLon);
-        int spawnAmount = Random.Range(1, 4);
+        int spawnAmount = Random.Range(2, 6);
 
         for(int i = 0; i < spawnAmount; i++)
         {

@@ -21,7 +21,7 @@ public class EnemySpawning : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        spawnAmount = gameManager.GetComponent<GameManagerScript>().enemyAmount -1;
+        spawnAmount = gameManager.GetComponent<GameManagerScript>().enemyAmount;
 
         if (spawnAmount > 0)
         {
