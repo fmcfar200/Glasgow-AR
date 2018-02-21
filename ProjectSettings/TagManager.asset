@@ -9,6 +9,7 @@ TagManager:
   - PlayerIcon
   - Map
   - Game Manager
+  - Enemy Icon
   layers:
   - Default
   - TransparentFX
