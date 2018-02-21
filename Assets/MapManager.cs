@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using Vuforia;
+
 using Mapbox.Unity.Map;
 using Mapbox.Utils;
 using Mapbox.Unity.Utilities;
@@ -30,9 +32,21 @@ public class MapManager : MonoBehaviour {
         {
             Debug.LogError("Player Object not found!");
         }
-        
 
-	}
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "AR Scene")
+        {
+
+            Camera.main.GetComponent<VuforiaBehaviour>().enabled = true;
+
+        }
+        else
+        {
+            Camera.main.GetComponent<VuforiaBehaviour>().enabled = false;
+        }
+
+    }
 
     // Update is called once per frame
     void Update()
