@@ -18,6 +18,8 @@ public class MapManager : MonoBehaviour {
     public GameObject player;
 
     private float pLat, pLon;
+    float lastLat;
+    float lastLon;
 
     public int enemyAmount = 0;
     public bool moved = false;
@@ -74,21 +76,17 @@ public class MapManager : MonoBehaviour {
           pLat = player.GetComponent<GPSLocation>().lat;
           pLon = player.GetComponent<GPSLocation>().lon;
 
-            if (moved == true)
+            if (pLat != lastLat && pLon != lastLon )
             {
                 ClearEnemies();
                 SpawnEnemyIcons();
-                moved = false;
-
             }
 
+          lastLat = player.GetComponent<GPSLocation>().lat;
+          lastLon = player.GetComponent<GPSLocation>().lon;
+
         }
 
-      if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began || Input.GetMouseButtonDown(0))
-        {
-            ClearEnemies();
-            SpawnEnemyIcons();
-        }
 
      }
 
