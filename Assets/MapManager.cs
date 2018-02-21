@@ -20,6 +20,7 @@ public class MapManager : MonoBehaviour {
     private float pLat, pLon;
 
     public int enemyAmount = 0;
+    public bool moved = false;
     private GameObject gameManager;
 
     ILocationProvider _locationProvider;
@@ -60,16 +61,10 @@ public class MapManager : MonoBehaviour {
             Camera.main.GetComponent<VuforiaBehaviour>().enabled = false;
         }
 
-        LocationProvider.OnLocationUpdated += LocationProvider_OnLocationUpdated;
+
 
     }
-    void LocationProvider_OnLocationUpdated(object sender, LocationUpdatedEventArgs e)
-    {
-        LocationProvider.OnLocationUpdated -= LocationProvider_OnLocationUpdated;
-        SpawnEnemyIcons();
-        
-    }
-
+ 
     // Update is called once per frame
     void Update()
     {
@@ -78,14 +73,30 @@ public class MapManager : MonoBehaviour {
       {
           pLat = player.GetComponent<GPSLocation>().lat;
           pLon = player.GetComponent<GPSLocation>().lon;
-          
-      }
+
+            if (moved == true)
+            {
+                ClearEnemies();
+                SpawnEnemyIcons();
+                moved = false;
+
+            }
+
+        }
+
+      if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began || Input.GetMouseButtonDown(0))
+        {
+            ClearEnemies();
+            SpawnEnemyIcons();
+        }
 
      }
 
-    void SpawnEnemyIcons()
+
+    public void SpawnEnemyIcons()
     {
         Debug.Log("Location Update");
+       
 
         Vector2d enemyLatLon = new Vector2d((double)pLat, (double)pLon);
         int spawnAmount = Random.Range(1, 4);
@@ -110,6 +121,21 @@ public class MapManager : MonoBehaviour {
         
         gameManager.GetComponent<GameManagerScript>().enemyAmount = enemyAmount;
 
+    }
+
+    
+
+    public void ClearEnemies()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy Icon");
+
+        foreach (GameObject e in enemies)
+        {
+            Destroy(e.gameObject);
+        }
+
+        enemies = null;
+        enemyAmount = 0;
     }
     
  }

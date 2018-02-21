@@ -8,11 +8,13 @@ public class GPSLocation : MonoBehaviour {
     public float lat, lon;
     public Text infoText;
 
+
 	// Use this for initialization
 	void Start ()
     {
         //starts test on init
         //StartCoroutine(TestLocServices());
+
 	}
 	
 	// Update is called once per frame
@@ -28,6 +30,22 @@ public class GPSLocation : MonoBehaviour {
         infoText.text = "Location: " + lat + "  " + lon;
 
     }
+
+    /*
+    void OnTriggerExit(Collider coll)
+    {
+        
+        if (coll.gameObject.tag == "Enemy Icon")
+        {
+            Debug.Log("Enemy Icon");
+            if (mapManager != null)
+            {
+                mapManager.ClearEnemies();
+                mapManager.SpawnEnemyIcons();
+            }
+        }
+    }
+    */
 
     IEnumerator TestLocServices()
     {

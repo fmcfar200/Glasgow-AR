@@ -512,6 +512,7 @@ MonoBehaviour:
   map: {fileID: 1530228974}
   player: {fileID: 1674138739}
   enemyAmount: 0
+  moved: 0
 --- !u!4 &777438659
 Transform:
   m_ObjectHideFlags: 0
@@ -974,6 +975,7 @@ GameObject:
   - component: {fileID: 1674138745}
   - component: {fileID: 1674138744}
   - component: {fileID: 1674138746}
+  - component: {fileID: 1674138747}
   m_Layer: 0
   m_Name: Player
   m_TagString: PlayerIcon
@@ -1022,10 +1024,10 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1674138739}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1674138742
 MeshFilter:
@@ -1090,6 +1092,21 @@ MonoBehaviour:
   lat: 0
   lon: 0
   infoText: {fileID: 739390813}
+--- !u!54 &1674138747
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1674138739}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1723143099
 GameObject:
   m_ObjectHideFlags: 0
