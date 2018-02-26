@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour {
         currentHealth = maxHealth;
 
         defaultShader = Shader.Find("Mobile/Diffuse");
-        targetShader = Shader.Find("Outlined/Silhouetted Diffuse");
+        targetShader = Shader.Find("Outlined/Diffuse");
 
         player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
