@@ -54,6 +54,8 @@
      <Compile Include="Assets\EnemyLocation.cs" />
      <Compile Include="Assets\EnemySpawning.cs" />
      <Compile Include="Assets\GPSLocation.cs" />
+     <Compile Include="Assets\KY_effects\Script\ConGUI.cs" />
+     <Compile Include="Assets\KY_effects\Script\Lighting.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\DirectionResource.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Directions.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Overview.cs" />
@@ -281,7 +283,9 @@
      <None Include="Assets\Vuforia\Shaders\OutlineOpaque.shader" />
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Object_OT.xml" />
+     <None Include="Assets\Icons Package\_Icon Package Read Me.txt" />
      <None Include="Assets\license_3rdpartynotice.txt" />
+     <None Include="Assets\KY_effects\MagicEffectsPackFree\ReadMe.txt" />
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
      <None Include="Assets\Mapbox\Core\Plugins\link.xml" />
      <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Images.xml" />

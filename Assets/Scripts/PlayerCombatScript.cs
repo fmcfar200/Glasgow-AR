@@ -6,8 +6,18 @@ public class PlayerCombatScript : MonoBehaviour {
 
     RaycastHit hit;
     Vector2[] touches = new Vector2[5];
+
+    GameObject target;
+
+    public bool fire;
+    float fireSpeed = 6.0f;
+
+    public GameObject fireballPrefab;
+    GameObject theFireball;
+
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	
@@ -28,12 +38,11 @@ public class PlayerCombatScript : MonoBehaviour {
                         if (hit.collider.gameObject.tag == "enemy")
                         {
 
-                            hit.collider.GetComponent<Enemy>().currentHealth -= 25;
+                            target = hit.collider.gameObject;
                         }
                     }
                 }
                    
-                
             }
         }
         else
@@ -46,14 +55,37 @@ public class PlayerCombatScript : MonoBehaviour {
                 {
                     if (hit.collider.gameObject.tag == "enemy")
                     {
-                        print("hit");
-                        hit.collider.GetComponent<Enemy>().currentHealth -= 25;
+                        target = hit.collider.gameObject;
+
                     }
                 }
-                    
-
-                
+      
             }
         }
-	}
+
+
+        if (fire)
+        {
+            fire = false;
+            Vector3 fireballPosition = Camera.main.transform.position;
+            fireballPosition.x = fireballPosition.x - 1.0f;
+            theFireball = (GameObject) Instantiate(fireballPrefab, fireballPosition, Quaternion.identity) as GameObject;
+
+        }
+
+        if (theFireball != null)
+        {
+            float step = fireSpeed * Time.deltaTime;
+            theFireball.transform.position = Vector3.MoveTowards(theFireball.transform.position, target.transform.position, step);
+
+            if (theFireball.transform.position == target.transform.position)
+            {
+                target.GetComponent<Enemy>().currentHealth -= 25;
+                Destroy(theFireball);
+                theFireball = null;
+            }
+
+        }
+
+    }
 }
