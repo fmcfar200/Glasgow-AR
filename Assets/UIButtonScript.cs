@@ -38,4 +38,23 @@ public class UIButtonScript : MonoBehaviour {
     {
         playerCombat.fire = true;
     }
+
+
+    void Update()
+    {
+        foreach (Button bt in buttons)
+        {
+            if (playerCombat.GetTarget() == null)
+            {
+                bt.interactable = false;
+
+            }
+            else
+            {
+                bt.interactable = true;
+
+            }
+        }
+       
+    }
 }

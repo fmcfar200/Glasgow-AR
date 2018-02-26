@@ -14,6 +14,7 @@ public class PlayerCombatScript : MonoBehaviour {
 
     public GameObject fireballPrefab;
     GameObject theFireball;
+    List<GameObject> fireBallList = new List<GameObject>();
 
 	// Use this for initialization
 	void Start ()
@@ -63,29 +64,54 @@ public class PlayerCombatScript : MonoBehaviour {
             }
         }
 
-
-        if (fire)
+        if (target != null)
         {
-            fire = false;
-            Vector3 fireballPosition = Camera.main.transform.position;
-            fireballPosition.x = fireballPosition.x - 1.0f;
-            theFireball = (GameObject) Instantiate(fireballPrefab, fireballPosition, Quaternion.identity) as GameObject;
-
-        }
-
-        if (theFireball != null)
-        {
-            float step = fireSpeed * Time.deltaTime;
-            theFireball.transform.position = Vector3.MoveTowards(theFireball.transform.position, target.transform.position, step);
-
-            if (theFireball.transform.position == target.transform.position)
+            if (fire && theFireball == null)
             {
-                target.GetComponent<Enemy>().currentHealth -= 25;
-                Destroy(theFireball);
-                theFireball = null;
+                fire = false;
+                Vector3 fireballPosition = Camera.main.transform.position;
+                fireballPosition.x = fireballPosition.x - 1.0f;
+                theFireball = (GameObject)Instantiate(fireballPrefab, fireballPosition, Quaternion.identity) as GameObject;
+                fireBallList.Add(theFireball);
+
             }
 
-        }
+            if (theFireball != null)
+            {
+                float step = fireSpeed * Time.deltaTime;
+                theFireball.transform.position = Vector3.MoveTowards(theFireball.transform.position, target.transform.position, step);
 
+                if (theFireball.transform.position == target.transform.position)
+                {
+                    target.GetComponent<Enemy>().currentHealth -= 25;
+                    Destroy(theFireball);
+                    theFireball = null;
+                }
+
+            }
+
+
+        }
+        else if (target == null)
+        {
+            foreach(GameObject fb in fireBallList)
+            {
+                Destroy(fb);
+            }
+            fireBallList.Clear();
+        }
+        
+        
+
+    }
+
+    public GameObject GetTarget()
+    {
+        return target;
+    }
+
+    public void ClearTarget()
+    {
+        target = null;
     }
 }
