@@ -7,19 +7,19 @@ public class PlayerCombatScript : MonoBehaviour {
     RaycastHit hit;
     Vector2[] touches = new Vector2[5];
 
-    GameObject target;
-
+    public bool myTurn;
+    private GameObject target;
     public bool fire;
-    float fireSpeed = 6.0f;
+    private float fireSpeed = 6.0f;
 
     public GameObject fireballPrefab;
-    GameObject theFireball;
-    List<GameObject> fireBallList = new List<GameObject>();
+    private GameObject theFireball;
+    private List<GameObject> fireBallList = new List<GameObject>();
 
 	// Use this for initialization
 	void Start ()
     {
-		
+        myTurn = true;
 	}
 	
 	// Update is called once per frame
@@ -64,7 +64,7 @@ public class PlayerCombatScript : MonoBehaviour {
             }
         }
 
-        if (target != null)
+        if (target != null && myTurn)
         {
             if (fire && theFireball == null)
             {
@@ -86,8 +86,8 @@ public class PlayerCombatScript : MonoBehaviour {
                     target.GetComponent<Enemy>().currentHealth -= 25;
                     Destroy(theFireball);
                     theFireball = null;
+                    myTurn = false;
                 }
-
             }
 
 
@@ -99,6 +99,7 @@ public class PlayerCombatScript : MonoBehaviour {
                 Destroy(fb);
             }
             fireBallList.Clear();
+            myTurn = true;
         }
         
         

@@ -12,13 +12,22 @@ public class Enemy : MonoBehaviour {
 
     GameObject player;
     PlayerCombatScript playerCombat;
+    bool playerTurn;
 
     Shader defaultShader, targetShader;
 
-    
-
-	void Start()
+    enum State
     {
+        IDLE,
+        ATTACKING,
+        STUNNED
+    }
+    State currentState;
+
+
+    void Start()
+    {
+        currentState = State.IDLE;
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
 
@@ -39,24 +48,39 @@ public class Enemy : MonoBehaviour {
     void Update()
     {
         LookAtCamera();
+        UpdateShader();
 
+        playerTurn = playerCombat.myTurn;
+        if (this.gameObject == playerCombat.GetTarget() && playerTurn == false && currentState == State.IDLE)
+        {
+            currentState = State.ATTACKING;
+        }
+
+        switch(currentState)
+        {
+            case State.IDLE:
+                animator.SetInteger("Attack", 0);
+                animator.SetInteger("Idle", 1);
+                break;
+            case State.ATTACKING:
+                Attack();
+                break;
+            case State.STUNNED:
+                break;
+        }
 
         if (currentHealth <= 0)
         {
             Death();
         }
+    }
 
-        GameObject child = this.transform.GetChild(2).gameObject;
-        if (this.gameObject == playerCombat.GetTarget())
-        {
-            child.GetComponent<Renderer>().material.shader = targetShader;
-        }
-        else
-        {
-            child.GetComponent<Renderer>().material.shader = defaultShader;
-
-        }
-
+    void Attack()
+    {
+        animator.SetInteger("Idle", 0);
+        animator.SetInteger("Attack", 1);
+        Debug.Log("Hit Player");
+        StartCoroutine(WaitandEndTurn(animator.GetCurrentAnimatorStateInfo(0).length));
     }
 
     void Death()
@@ -79,6 +103,13 @@ public class Enemy : MonoBehaviour {
         Destroy(this.gameObject);
 
     }
+    IEnumerator WaitandEndTurn(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        currentState = State.IDLE;
+        playerTurn = true;
+        playerCombat.myTurn = playerTurn;
+    }
 
     void LookAtCamera()
     {
@@ -86,5 +117,19 @@ public class Enemy : MonoBehaviour {
         lookPosition.y = 0;
         Quaternion theRotation = Quaternion.LookRotation(lookPosition);
         transform.rotation = Quaternion.Slerp(transform.rotation, theRotation, 1.0f * Time.deltaTime);
+    }
+
+    void UpdateShader()
+    {
+        GameObject child = this.transform.GetChild(2).gameObject;
+        if (this.gameObject == playerCombat.GetTarget())
+        {
+            child.GetComponent<Renderer>().material.shader = targetShader;
+        }
+        else
+        {
+            child.GetComponent<Renderer>().material.shader = defaultShader;
+
+        }
     }
 }

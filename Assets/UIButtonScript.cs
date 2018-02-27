@@ -48,7 +48,7 @@ public class UIButtonScript : MonoBehaviour {
         {
             foreach (Button bt in buttons)
             {
-                if (playerCombat.GetTarget() == null)
+                if (playerCombat.GetTarget() == null ||playerCombat.myTurn == false)
                 {
                     bt.interactable = false;
 
