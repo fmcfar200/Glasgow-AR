@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class PlayerCombatScript : MonoBehaviour {
 
+    PlayerInfo playerInfo;
+
     RaycastHit hit;
     Vector2[] touches = new Vector2[5];
 
     public bool myTurn;
+    private bool giveMana = false;
     private GameObject target;
+
+
+
     public bool fire;
     private float fireSpeed = 6.0f;
-
     public GameObject fireballPrefab;
     private GameObject theFireball;
     private List<GameObject> fireBallList = new List<GameObject>();
@@ -19,6 +24,7 @@ public class PlayerCombatScript : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        playerInfo = GetComponent<PlayerInfo>();
         myTurn = true;
 	}
 	
@@ -66,9 +72,17 @@ public class PlayerCombatScript : MonoBehaviour {
 
         if (target != null && myTurn)
         {
+            if (giveMana)
+            {
+                giveMana = false;
+                playerInfo.currentMana += Random.Range(10, 20);
+            }
+
             if (fire && theFireball == null)
             {
                 fire = false;
+
+                playerInfo.currentMana -= 30;
                 Vector3 fireballPosition = Camera.main.transform.position;
                 fireballPosition.x = fireballPosition.x - 1.0f;
                 theFireball = (GameObject)Instantiate(fireballPrefab, fireballPosition, Quaternion.identity) as GameObject;
@@ -85,7 +99,9 @@ public class PlayerCombatScript : MonoBehaviour {
                 {
                     target.GetComponent<Enemy>().currentHealth -= 25;
                     Destroy(theFireball);
+
                     theFireball = null;
+                    giveMana = true;
                     myTurn = false;
                 }
             }

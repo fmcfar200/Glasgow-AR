@@ -7,14 +7,19 @@ public class Enemy : MonoBehaviour {
     public int currentHealth;
     int maxHealth = 100;
     bool alive = true;
+    bool hit = false;
+
 
     Animator animator;
 
     GameObject player;
     PlayerCombatScript playerCombat;
+    PlayerInfo playerInfo;
+
     bool playerTurn;
 
     Shader defaultShader, targetShader;
+
 
     enum State
     {
@@ -38,6 +43,8 @@ public class Enemy : MonoBehaviour {
         if (player != null)
         {
             playerCombat = player.GetComponent<PlayerCombatScript>();
+            playerInfo = player.GetComponent<PlayerInfo>();
+
         }
         else
         {
@@ -51,7 +58,12 @@ public class Enemy : MonoBehaviour {
         UpdateShader();
 
         playerTurn = playerCombat.myTurn;
-        if (this.gameObject == playerCombat.GetTarget() && playerTurn == false && currentState == State.IDLE)
+
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
+        else if (this.gameObject == playerCombat.GetTarget() && playerTurn == false && currentState == State.IDLE)
         {
             currentState = State.ATTACKING;
         }
@@ -59,6 +71,7 @@ public class Enemy : MonoBehaviour {
         switch(currentState)
         {
             case State.IDLE:
+                hit = false;
                 animator.SetInteger("Attack", 0);
                 animator.SetInteger("Idle", 1);
                 break;
@@ -69,18 +82,24 @@ public class Enemy : MonoBehaviour {
                 break;
         }
 
-        if (currentHealth <= 0)
-        {
-            Death();
-        }
+       
     }
 
     void Attack()
     {
         animator.SetInteger("Idle", 0);
         animator.SetInteger("Attack", 1);
-        Debug.Log("Hit Player");
-        StartCoroutine(WaitandEndTurn(animator.GetCurrentAnimatorStateInfo(0).length));
+
+        int randomAmount = Random.Range(18, 28);
+
+        if (!hit)
+        {
+            StartCoroutine(WaitandEndTurn(animator.GetCurrentAnimatorStateInfo(0).length));
+            playerInfo.currentHealth -= randomAmount;
+            hit = true;
+
+        }
+
     }
 
     void Death()
@@ -121,7 +140,18 @@ public class Enemy : MonoBehaviour {
 
     void UpdateShader()
     {
-        GameObject child = this.transform.GetChild(2).gameObject;
+        GameObject child;
+        if (this.gameObject.name == "Bat_Red")
+        {
+            child = this.transform.Find("Mesh").gameObject;
+        }
+        else
+        {
+             child = this.transform.GetChild(2).gameObject;
+
+        }
+
+
         if (this.gameObject == playerCombat.GetTarget())
         {
             child.GetComponent<Renderer>().material.shader = targetShader;

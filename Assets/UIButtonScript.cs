@@ -7,7 +7,13 @@ using UnityEngine.UI;
 public class UIButtonScript : MonoBehaviour {
 
     PlayerCombatScript playerCombat;
+    PlayerInfo playerInfo;
+
     public Button[] buttons;
+
+    public Image playerHealthBar;
+    public Image manaBar;
+
     Scene scene;
 
     void Start()
@@ -16,7 +22,9 @@ public class UIButtonScript : MonoBehaviour {
 
         if (scene.name == "AR Scene")
         {
-            playerCombat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatScript>();
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            playerCombat = player.GetComponent<PlayerCombatScript>();
+            playerInfo = player.GetComponent<PlayerInfo>();
             if (playerCombat == null)
             {
                 Debug.LogError("Player combat not found");
@@ -59,6 +67,13 @@ public class UIButtonScript : MonoBehaviour {
 
                 }
             }
+
+            if (playerCombat.myTurn == true)
+            {
+                playerHealthBar.fillAmount = (float)playerInfo.currentHealth / 100;
+                manaBar.fillAmount = (float)playerInfo.currentMana / 100;
+            }
+           
         }
     }
 }
