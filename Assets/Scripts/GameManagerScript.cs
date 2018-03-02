@@ -8,7 +8,9 @@ public class GameManagerScript : MonoBehaviour {
 
     public static GameManagerScript manager;
     public GameObject testPrefab;
+
     public int enemyAmount;
+    public List<EnemyIcon.Type> types = new List<EnemyIcon.Type>();
 
     Scene scene;
 

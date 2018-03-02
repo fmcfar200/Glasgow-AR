@@ -14,6 +14,7 @@ using Mapbox.Unity.Location;
 
 public class MapManager : MonoBehaviour {
 
+    private GameObject gameManager;
     public AbstractMap map;
     public GameObject player;
 
@@ -23,7 +24,9 @@ public class MapManager : MonoBehaviour {
 
     public int enemyAmount = 0;
     public bool moved = false;
-    private GameObject gameManager;
+
+    public List<GameObject> enemyIcons = new List<GameObject>();
+
 
     ILocationProvider _locationProvider;
     ILocationProvider LocationProvider
@@ -109,15 +112,13 @@ public class MapManager : MonoBehaviour {
             enemyIconPos.x += randomX;
             enemyIconPos.z += randomZ;
 
-            GameObject testObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            testObject.tag = "Enemy Icon";
-            testObject.transform.position = enemyIconPos;
-
+            int randomIndex = Random.Range(0, enemyIcons.Count);
+            GameObject icon = GameObject.Instantiate(enemyIcons[randomIndex], enemyIconPos, Quaternion.identity);
+            icon.tag = "Enemy Icon";
             enemyAmount++;
         }
 
         
-        gameManager.GetComponent<GameManagerScript>().enemyAmount = enemyAmount;
 
     }
 
@@ -135,6 +136,19 @@ public class MapManager : MonoBehaviour {
         enemies = null;
         enemyAmount = 0;
     }
-    
- }
+
+    private void UpdateManager()
+    {
+        gameManager.GetComponent<GameManagerScript>().enemyAmount = enemyAmount;
+
+
+        gameManager.GetComponent<GameManagerScript>().types.Clear();
+        GameObject[] icons = GameObject.FindGameObjectsWithTag("Enemy Icon");
+        foreach(GameObject icon in icons)
+        {
+            gameManager.GetComponent<GameManagerScript>().types.Add(icon.GetComponent<EnemyIcon>().theType);
+        }
+    }
+
+}
 

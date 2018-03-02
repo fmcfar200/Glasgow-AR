@@ -97,7 +97,7 @@ public class PlayerCombatScript : MonoBehaviour {
 
                 if (theFireball.transform.position == target.transform.position)
                 {
-                    target.GetComponent<Enemy>().currentHealth -= 25;
+                    target.GetComponent<EnemyCombat>().currentHealth -= 25;
                     Destroy(theFireball);
 
                     theFireball = null;

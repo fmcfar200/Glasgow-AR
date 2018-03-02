@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemySpawning : MonoBehaviour {
 
     GameObject gameManager;
+    List<EnemyIcon.Type> theTypes;
 
-
-    public GameObject testPrefab;
+    public List<GameObject> enemies = new List<GameObject>();
     int spawnAmount;
 
     void Awake()
@@ -22,14 +22,28 @@ public class EnemySpawning : MonoBehaviour {
 	void Start ()
     {
         spawnAmount = gameManager.GetComponent<GameManagerScript>().enemyAmount;
+        theTypes = gameManager.GetComponent<GameManagerScript>().types;
 
-        if (spawnAmount > 0)
+        if (spawnAmount > 0 && theTypes.Count > 0)
         {
             for(int i = 0; i < spawnAmount; i++)
             {
                 Vector3 randomPos = Random.insideUnitSphere * 6;
                 randomPos.y = 0.25f;
-                Instantiate(testPrefab, randomPos, Quaternion.identity);
+
+                foreach(EnemyIcon.Type type in theTypes)
+                {
+                    if (type == EnemyIcon.Type.BAT)
+                    {
+                        Instantiate(enemies[0], randomPos, Quaternion.identity);
+
+                    }
+                    else if (type == EnemyIcon.Type.SKELETON)
+                    {
+                        Instantiate(enemies[1], randomPos, Quaternion.identity);
+
+                    }
+                }
                 
             }
             spawnAmount = 0;

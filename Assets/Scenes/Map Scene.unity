@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testPrefab: {fileID: 1481558847177836, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
   enemyAmount: 0
+  types: 
 --- !u!4 &95744154
 Transform:
   m_ObjectHideFlags: 0
@@ -331,6 +332,17 @@ MonoBehaviour:
           m_StringArgument: AR Scene
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &456688448
@@ -513,6 +525,9 @@ MonoBehaviour:
   player: {fileID: 1674138739}
   enemyAmount: 0
   moved: 0
+  enemyIcons:
+  - {fileID: 1120990662220860, guid: 3eb882f3f068f5948a412f976cdf281b, type: 2}
+  - {fileID: 1352225747035780, guid: 56e150dda11b3214bb0d83135169e60a, type: 2}
 --- !u!4 &777438659
 Transform:
   m_ObjectHideFlags: 0
@@ -572,6 +587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons: []
+  playerHealthBar: {fileID: 0}
+  manaBar: {fileID: 0}
 --- !u!1 &842715093
 GameObject:
   m_ObjectHideFlags: 0
