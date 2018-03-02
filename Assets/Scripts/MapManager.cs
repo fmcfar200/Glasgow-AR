@@ -118,7 +118,7 @@ public class MapManager : MonoBehaviour {
             enemyAmount++;
         }
 
-        
+        UpdateManager();
 
     }
 
