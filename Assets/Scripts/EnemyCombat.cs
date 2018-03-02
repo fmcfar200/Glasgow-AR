@@ -94,7 +94,7 @@ public class EnemyCombat : MonoBehaviour {
 
         if (!hit)
         {
-            StartCoroutine(WaitandEndTurn(animator.GetCurrentAnimatorStateInfo(0).length));
+            StartCoroutine(WaitandEndTurn(animator.GetCurrentAnimatorStateInfo(0).length - 0.5f));
             playerInfo.currentHealth -= randomAmount;
             hit = true;
 
@@ -112,7 +112,7 @@ public class EnemyCombat : MonoBehaviour {
         {
             playerCombat.ClearTarget();
         }
-        StartCoroutine(WaitandDestroy(5.0f));
+        StartCoroutine(WaitandDestroy(3.0f));
 
     }
 

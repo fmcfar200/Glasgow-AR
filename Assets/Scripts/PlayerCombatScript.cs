@@ -100,9 +100,9 @@ public class PlayerCombatScript : MonoBehaviour {
                     target.GetComponent<EnemyCombat>().currentHealth -= 25;
                     Destroy(theFireball);
 
-                    theFireball = null;
-                    giveMana = true;
-                    myTurn = false;
+                    StartCoroutine(WaitAndEndTurn(0.5f));
+
+                   
                 }
             }
 
@@ -130,5 +130,13 @@ public class PlayerCombatScript : MonoBehaviour {
     public void ClearTarget()
     {
         target = null;
+    }
+
+    IEnumerator WaitAndEndTurn(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        theFireball = null;
+        giveMana = true;
+        myTurn = false;
     }
 }
