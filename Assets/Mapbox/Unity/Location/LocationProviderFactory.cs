@@ -108,13 +108,15 @@ namespace Mapbox.Unity.Location
         /// </summary>
         private void Awake()
         {
+            /*
             if (Instance != null)
             {
                 DestroyImmediate(gameObject);
                 return;
             }
+            */
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
 
             InjectEditorLocationProvider();
             InjectDeviceLocationProvider();
