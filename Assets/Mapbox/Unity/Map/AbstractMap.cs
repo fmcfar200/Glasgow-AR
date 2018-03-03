@@ -10,6 +10,7 @@
 	// TODO: make abstract! For example: MapFromFile, MapFromLocationProvider, etc.
 	public class AbstractMap : MonoBehaviour, IMap
 	{
+
 		[Geocode]
 		[SerializeField]
 		string _latitudeLongitudeString;
@@ -114,6 +115,9 @@
 		// This is the part that is abstract?
 		protected virtual void Start()
 		{
+
+         
+
 			var latLonSplit = _latitudeLongitudeString.Split(',');
 			_mapCenterLatitudeLongitude = new Vector2d(double.Parse(latLonSplit[0]), double.Parse(latLonSplit[1]));
 
