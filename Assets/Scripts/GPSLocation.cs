@@ -15,6 +15,9 @@ public class GPSLocation : MonoBehaviour {
         //starts test on init
         //StartCoroutine(TestLocServices());
 
+        Input.location.Start();
+
+
 	}
 	
 	// Update is called once per frame

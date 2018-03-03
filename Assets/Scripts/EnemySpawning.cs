@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawning : MonoBehaviour {
+public class EnemySpawning : MonoBehaviour
+{
 
     GameObject gameManager;
     List<EnemyIcon.Type> theTypes;
@@ -18,7 +19,7 @@ public class EnemySpawning : MonoBehaviour {
             Debug.LogError("Cannot find Game Manager");
         }
     }
-	// Use this for initialization
+
 	void Start ()
     {
         spawnAmount = gameManager.GetComponent<GameManagerScript>().enemyAmount;
@@ -28,11 +29,12 @@ public class EnemySpawning : MonoBehaviour {
         {
             for(int i = 0; i < spawnAmount; i++)
             {
-                Vector3 randomPos = Random.insideUnitSphere * 6;
-                randomPos.y = 0.25f;
-
+                
                 foreach(EnemyIcon.Type type in theTypes)
                 {
+                    Vector3 randomPos = Random.insideUnitSphere * 6;
+                    randomPos.y = 0.25f;
+
                     if (type == EnemyIcon.Type.BAT)
                     {
                         Instantiate(enemies[0], randomPos, Quaternion.identity);
@@ -48,10 +50,5 @@ public class EnemySpawning : MonoBehaviour {
             }
             spawnAmount = 0;
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
