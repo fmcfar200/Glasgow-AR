@@ -9,6 +9,7 @@ namespace Mapbox.Examples.LocationProvider
     {
         [SerializeField]
         private AbstractMap _map;
+        private GameObject mapObject;
 
         /// <summary>
         /// The rate at which the transform's position tries catch up to the provided location.
@@ -60,10 +61,10 @@ namespace Mapbox.Examples.LocationProvider
 
         void Start()
         {
+            mapManager = GameObject.FindGameObjectWithTag("Map").GetComponent<MapManager>();
+
             LocationProvider.OnLocationUpdated += LocationProvider_OnLocationUpdated;
             _map.OnInitialized += () => _isInitialized = true;
-
-            mapManager = GameObject.FindGameObjectWithTag("Map").GetComponent<MapManager>();
 
         }
 
@@ -87,6 +88,8 @@ namespace Mapbox.Examples.LocationProvider
 
         void Update()
         {
+
+            _map = GameObject.FindGameObjectWithTag("Map").GetComponent<AbstractMap>();
             transform.position = Vector3.Lerp(transform.position, _targetPosition, Time.deltaTime * _positionFollowFactor);
 
             if (transform.position == _targetPosition)
