@@ -281,6 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons:
   - {fileID: 1844069263}
+  - {fileID: 1263672660}
   playerHealthBar: {fileID: 1917057354}
   manaBar: {fileID: 1009922919}
 --- !u!1 &199074593
@@ -376,7 +377,7 @@ RectTransform:
   - {fileID: 1917057353}
   - {fileID: 1009922918}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -481,7 +482,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &265022686
 MonoBehaviour:
@@ -497,62 +498,6 @@ MonoBehaviour:
   enemies:
   - {fileID: 1955812641947828, guid: 9e2d562daf187d24ab97f5e12dc5a2b0, type: 2}
   - {fileID: 1481558847177836, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
---- !u!1001 &331426752
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4292888413309926, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292888413309926, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292888413309926, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 2.682
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292888413309926, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292888413309926, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292888413309926, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292888413309926, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292888413309926, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114211956481764678, guid: 42e64e772f34ff44993cc7a9e6b01a69,
-        type: 2}
-      propertyPath: mPlaneReference
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114211956481764678, guid: 42e64e772f34ff44993cc7a9e6b01a69,
-        type: 2}
-      propertyPath: mMidAirReference
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481558847177836, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
-      propertyPath: m_Name
-      value: MidAirSkeleton
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &357131343
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +558,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &802247065
 GameObject:
@@ -917,7 +862,7 @@ Transform:
   m_Children:
   - {fileID: 1316567389}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!21 &962374309
 Material:
@@ -1059,7 +1004,7 @@ Transform:
   m_Children:
   - {fileID: 2109116631}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1009922917
 GameObject:
@@ -1199,13 +1144,13 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1263672661}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 168124525}
+        m_MethodName: StunButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1352,6 +1297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+  currentState: 0
 --- !u!136 &1316567392
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1396,6 +1342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+  currentState: 0
 --- !u!54 &1366877801
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1454,7 +1401,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTurn: 0
   fire: 0
+  stun: 0
   fireballPrefab: {fileID: 1933855932295430, guid: 9ae08a4f306bb3040bb78870d5ddaa77,
+    type: 2}
+  stunEffectPrefab: {fileID: 1663059493410492, guid: 253024f58be679f4fa452d9117c7995b,
     type: 2}
 --- !u!4 &1699566677
 Transform:
@@ -1467,7 +1417,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1699566678
 MonoBehaviour:
@@ -1523,7 +1473,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1844069261
 GameObject:

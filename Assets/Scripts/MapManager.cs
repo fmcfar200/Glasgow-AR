@@ -67,7 +67,6 @@ public class MapManager : MonoBehaviour {
         }
 
 
-
     }
  
     // Update is called once per frame
@@ -90,7 +89,7 @@ public class MapManager : MonoBehaviour {
 
         }
 
-
+   
      }
 
 

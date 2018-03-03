@@ -15,10 +15,15 @@ public class PlayerCombatScript : MonoBehaviour {
 
 
 
-    public bool fire;
+    public bool fire, stun;
     private float fireSpeed = 6.0f;
+
     public GameObject fireballPrefab;
+    public GameObject stunEffectPrefab;
+
     private GameObject theFireball;
+    private GameObject theStunEffect;
+
     private List<GameObject> fireBallList = new List<GameObject>();
 
 	// Use this for initialization
@@ -78,7 +83,8 @@ public class PlayerCombatScript : MonoBehaviour {
                 playerInfo.currentMana += Random.Range(10, 20);
             }
 
-            if (fire && theFireball == null)
+
+            if (fire && playerInfo.currentMana >= 30 &&theFireball == null)
             {
                 fire = false;
 
@@ -90,7 +96,7 @@ public class PlayerCombatScript : MonoBehaviour {
 
             }
 
-            if (theFireball != null)
+            else if (theFireball != null)
             {
                 float step = fireSpeed * Time.deltaTime;
                 theFireball.transform.position = Vector3.MoveTowards(theFireball.transform.position, target.transform.position, step);
@@ -101,9 +107,24 @@ public class PlayerCombatScript : MonoBehaviour {
                     Destroy(theFireball);
 
                     StartCoroutine(WaitAndEndTurn(0.5f));
-
-                   
                 }
+            }
+
+            if (stun && playerInfo.currentMana >= 40 && theStunEffect == null)
+            {
+                stun = false;
+
+                playerInfo.currentMana -= 40;
+                Vector3 stunEffectPosition = target.transform.position;
+                theStunEffect = (GameObject)Instantiate(stunEffectPrefab, stunEffectPosition, Quaternion.identity) as GameObject;
+    
+            }
+            else if (theStunEffect != null)
+            {
+                StartCoroutine(WaitAndDestroy(theStunEffect.GetComponent<ParticleSystem>().main.duration, theStunEffect));
+                target.GetComponent<EnemyCombat>().currentState = EnemyCombat.State.STUNNED;
+                StartCoroutine(WaitAndNewTurn(0.5f));
+
             }
 
 
@@ -122,6 +143,8 @@ public class PlayerCombatScript : MonoBehaviour {
 
     }
 
+    
+
     public GameObject GetTarget()
     {
         return target;
@@ -131,7 +154,15 @@ public class PlayerCombatScript : MonoBehaviour {
     {
         target = null;
     }
+    IEnumerator WaitAndNewTurn(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        theFireball = null;
+        theStunEffect = null;
 
+        giveMana = true;
+        myTurn = true;
+    }
     IEnumerator WaitAndEndTurn(float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -139,4 +170,12 @@ public class PlayerCombatScript : MonoBehaviour {
         giveMana = true;
         myTurn = false;
     }
+
+    IEnumerator WaitAndDestroy(float seconds, GameObject theObject)
+    {
+        yield return new WaitForSeconds(seconds);
+        Destroy(theObject);
+    }
+
+
 }

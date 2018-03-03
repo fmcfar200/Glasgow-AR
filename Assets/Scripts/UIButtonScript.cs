@@ -48,6 +48,10 @@ public class UIButtonScript : MonoBehaviour {
     {
         playerCombat.fire = true;
     }
+    public void StunButton()
+    {
+        playerCombat.stun = true;
+    }
 
 
     void Update()

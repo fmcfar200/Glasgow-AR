@@ -27,27 +27,29 @@ public class EnemySpawning : MonoBehaviour
 
         if (spawnAmount > 0 && theTypes.Count > 0)
         {
-            for(int i = 0; i < spawnAmount; i++)
-            {
-                
-                foreach(EnemyIcon.Type type in theTypes)
-                {
-                    Vector3 randomPos = Random.insideUnitSphere * 6;
-                    randomPos.y = 0.25f;
 
-                    if (type == EnemyIcon.Type.BAT)
-                    {
+                foreach (EnemyIcon.Type type in theTypes)
+                {
+                    
+                   Vector3 randomPos = Random.insideUnitSphere * 6;
+                   randomPos.y = 0.25f;
+
+                   if (type == EnemyIcon.Type.BAT)
+                     {
                         Instantiate(enemies[0], randomPos, Quaternion.identity);
 
-                    }
-                    else if (type == EnemyIcon.Type.SKELETON)
-                    {
-                        Instantiate(enemies[1], randomPos, Quaternion.identity);
+                     }
 
-                    }
+                   if (type == EnemyIcon.Type.SKELETON)
+                     {
+                            Instantiate(enemies[1], randomPos, Quaternion.identity);
+
+                     }
+
+                spawnAmount--;
+      
                 }
-                
-            }
+
             spawnAmount = 0;
         }
 	}

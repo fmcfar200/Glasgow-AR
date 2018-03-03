@@ -21,13 +21,13 @@ public class EnemyCombat : MonoBehaviour {
     Shader defaultShader, targetShader;
 
 
-    enum State
+    public enum State
     {
         IDLE,
         ATTACKING,
         STUNNED
     }
-    State currentState;
+    public State currentState;
 
 
     void Start()
@@ -63,22 +63,35 @@ public class EnemyCombat : MonoBehaviour {
         {
             Death();
         }
-        else if (this.gameObject == playerCombat.GetTarget() && playerTurn == false && currentState == State.IDLE)
+        else if (this.gameObject == playerCombat.GetTarget() && playerTurn == false)
         {
-            currentState = State.ATTACKING;
+            if (currentState == State.IDLE)
+            {
+                currentState = State.ATTACKING;
+            }
+            else if (currentState == State.STUNNED)
+            {
+                currentState = State.ATTACKING;
+            }
         }
+        
+       
 
         switch(currentState)
         {
             case State.IDLE:
                 hit = false;
                 animator.SetInteger("Attack", 0);
+                animator.SetInteger("Stunned", 0);
                 animator.SetInteger("Idle", 1);
                 break;
             case State.ATTACKING:
                 Attack();
                 break;
             case State.STUNNED:
+                animator.SetInteger("Idle", 0);
+                animator.SetInteger("Stunned", 1);
+
                 break;
         }
 
@@ -88,8 +101,9 @@ public class EnemyCombat : MonoBehaviour {
     void Attack()
     {
         animator.SetInteger("Idle", 0);
+        animator.SetInteger("Stunned", 0);
         animator.SetInteger("Attack", 1);
-
+        
         int randomAmount = Random.Range(18, 28);
 
         if (!hit)
