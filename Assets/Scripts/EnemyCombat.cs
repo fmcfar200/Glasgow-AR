@@ -8,6 +8,9 @@ public class EnemyCombat : MonoBehaviour {
     bool alive = true;
     bool hit = false;
 
+    public bool poisoned = false;
+    int poisonTurns = 3;
+
     EnemyInfo enemyInfo;
     Animator animator;
 
@@ -25,7 +28,8 @@ public class EnemyCombat : MonoBehaviour {
     {
         IDLE,
         ATTACKING,
-        STUNNED
+        STUNNED,
+        POISONED
     }
     public State currentState;
 
@@ -75,9 +79,17 @@ public class EnemyCombat : MonoBehaviour {
             }
         }
         
-       
+       if (poisoned)
+        {
+            enemyInfo.healthBar.color = Color.green;
+        }
+       else
+        {
+            enemyInfo.healthBar.color = Color.white;
 
-        switch(currentState)
+        }
+
+        switch (currentState)
         {
             case State.IDLE:
                 hit = false;
@@ -91,8 +103,8 @@ public class EnemyCombat : MonoBehaviour {
             case State.STUNNED:
                 animator.SetInteger("Idle", 0);
                 animator.SetInteger("Stunned", 1);
-
                 break;
+
         }
 
        
@@ -110,6 +122,17 @@ public class EnemyCombat : MonoBehaviour {
         {
             StartCoroutine(WaitandEndTurn(animator.GetCurrentAnimatorStateInfo(0).length - 0.5f));
             playerInfo.currentHealth -= randomAmount;
+            
+            if (poisoned)
+            {
+                enemyInfo.currentHealth -= 40;
+                poisonTurns--;
+                if (poisonTurns <= 0)
+                {
+                    poisoned = false;
+                }
+            }
+
             hit = true;
 
         }

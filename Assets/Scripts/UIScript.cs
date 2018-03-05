@@ -54,7 +54,15 @@ public class UIScript : MonoBehaviour {
     {
         playerCombat.stun = true;
     }
+    public void Poison()
+    {
+        playerCombat.poison = true;
+    }
 
+    public void EndTurn()
+    {
+        playerCombat.endTurn = true;
+    }
 
     void Update()
     {

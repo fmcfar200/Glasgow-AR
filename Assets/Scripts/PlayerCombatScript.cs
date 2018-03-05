@@ -15,11 +15,12 @@ public class PlayerCombatScript : MonoBehaviour {
 
 
 
-    public bool fire, stun;
+    public bool fire, stun, poison, endTurn;
     private float fireSpeed = 6.0f;
 
     public GameObject fireballPrefab;
     public GameObject stunEffectPrefab;
+    public GameObject poisonPrefab;
 
     private GameObject theFireball;
     private GameObject theStunEffect;
@@ -106,7 +107,7 @@ public class PlayerCombatScript : MonoBehaviour {
                     target.GetComponent<EnemyInfo>().currentHealth -= 25;
                     Destroy(theFireball);
 
-                    StartCoroutine(WaitAndEndTurn(0.5f));
+                    //StartCoroutine(WaitAndEndTurn(0.5f));
                 }
             }
 
@@ -123,8 +124,22 @@ public class PlayerCombatScript : MonoBehaviour {
             {
                 StartCoroutine(WaitAndDestroy(theStunEffect.GetComponent<ParticleSystem>().main.duration, theStunEffect));
                 target.GetComponent<EnemyCombat>().currentState = EnemyCombat.State.STUNNED;
-                StartCoroutine(WaitAndNewTurn(0.5f));
+                //StartCoroutine(WaitAndNewTurn(0.5f));
 
+            }
+
+            if (poison)
+            {
+                poison = false;
+                GameObject poisonEffect = (GameObject)Instantiate(poisonPrefab, target.transform.position, Quaternion.identity);
+                StartCoroutine(WaitAndDestroy((float)poisonPrefab.GetComponent<ParticleSystem>().main.duration, poisonEffect));
+                target.GetComponent<EnemyCombat>().poisoned = true;
+            }
+
+            if (endTurn)
+            {
+                endTurn = false;
+                StartCoroutine(WaitAndEndTurn(0.2f));
             }
 
 
@@ -168,7 +183,17 @@ public class PlayerCombatScript : MonoBehaviour {
         yield return new WaitForSeconds(seconds);
         theFireball = null;
         giveMana = true;
-        myTurn = false;
+
+        if (target.GetComponent<EnemyCombat>().currentState == EnemyCombat.State.STUNNED)
+        {
+            myTurn = true;
+            target.GetComponent<EnemyCombat>().currentState = EnemyCombat.State.IDLE;
+        }
+        else
+        {
+            myTurn = false;
+
+        }
     }
 
     IEnumerator WaitAndDestroy(float seconds, GameObject theObject)

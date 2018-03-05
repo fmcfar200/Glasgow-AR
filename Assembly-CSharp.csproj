@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\EnemyInfo.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\DirectionResource.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Directions.cs" />
      <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Overview.cs" />
@@ -265,6 +264,7 @@
      <Compile Include="Assets\Particles\KY_effects\Script\Lighting.cs" />
      <Compile Include="Assets\Scripts\EnemyCombat.cs" />
      <Compile Include="Assets\Scripts\EnemyIcon.cs" />
+     <Compile Include="Assets\Scripts\EnemyInfo.cs" />
      <Compile Include="Assets\Scripts\EnemyLocation.cs" />
      <Compile Include="Assets\Scripts\EnemySpawning.cs" />
      <Compile Include="Assets\Scripts\GameManagerScript.cs" />
