@@ -84,8 +84,8 @@ public class UIScript : MonoBehaviour {
 
             if (playerCombat.myTurn == true)
             {
-                playerHealthBar.fillAmount = (float)playerInfo.currentHealth / 100;
-                manaBar.fillAmount = (float)playerInfo.currentMana / 100;
+                playerHealthBar.fillAmount = (float)playerInfo.currentHealth / (float)playerInfo.maxHealth;
+                manaBar.fillAmount = (float)playerInfo.currentMana / (float)playerInfo.maxMana;
             }
 
             playerLevelText.text = playerInfo.currentLevel.ToString();

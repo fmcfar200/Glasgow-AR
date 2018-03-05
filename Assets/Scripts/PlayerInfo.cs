@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour {
 
-    private int maxHealth;
-    private int maxMana;
+    public int maxHealth;
+    public int maxMana;
     private int maxXP;
 
 
