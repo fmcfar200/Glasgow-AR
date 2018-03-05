@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour {
 
-    public int currentHealth;
-    int maxHealth = 100;
+    
     bool alive = true;
     bool hit = false;
 
-
+    EnemyInfo enemyInfo;
     Animator animator;
 
     GameObject player;
@@ -34,7 +33,7 @@ public class EnemyCombat : MonoBehaviour {
     {
         currentState = State.IDLE;
         animator = GetComponent<Animator>();
-        currentHealth = maxHealth;
+        enemyInfo = GetComponent<EnemyInfo>();
 
         defaultShader = Shader.Find("Mobile/Diffuse");
         targetShader = Shader.Find("Outlined/Diffuse");
@@ -59,7 +58,7 @@ public class EnemyCombat : MonoBehaviour {
 
         playerTurn = playerCombat.myTurn;
 
-        if (currentHealth <= 0)
+        if (enemyInfo.currentHealth <= 0)
         {
             Death();
         }

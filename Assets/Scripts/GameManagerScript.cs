@@ -7,7 +7,6 @@ using Vuforia;
 public class GameManagerScript : MonoBehaviour {
 
     public static GameManagerScript manager;
-    public static GameObject map;
 
     public GameObject testPrefab;
 
@@ -29,13 +28,6 @@ public class GameManagerScript : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-
-        if (map == null)
-        {
-            map = GameObject.FindGameObjectWithTag("Map");
-        }
-     
-
         
 	}
 
@@ -45,12 +37,10 @@ public class GameManagerScript : MonoBehaviour {
         switch (theScene.name)
         {
             case "AR Scene":
-                map.SetActive(false);
                 Camera.main.GetComponent<VuforiaBehaviour>().enabled = true;
 
                 break;
             case "Map Scene":
-                map.SetActive(true);
                 Camera.main.GetComponent<VuforiaBehaviour>().enabled = false;
 
                 break;
