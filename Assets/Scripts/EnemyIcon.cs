@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyIcon : MonoBehaviour {
 
+    public int level = 1;
+    public TextMesh levelText;
+
     public enum Type
     {
         BAT,
@@ -12,6 +15,14 @@ public class EnemyIcon : MonoBehaviour {
     }
 
     public Type theType;
+
+
+    void Start()
+    {
+        levelText.text = "Lvl: " + level.ToString();
+
+    }
+
 
 
     public Type GetType()

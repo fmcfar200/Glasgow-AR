@@ -89,6 +89,12 @@ public class MapManager : MonoBehaviour {
 
         }
 
+      if (Input.GetMouseButtonDown(1))
+        {
+            ClearEnemies();
+            SpawnEnemyIcons();
+        }
+
    
      }
 
@@ -142,10 +148,13 @@ public class MapManager : MonoBehaviour {
 
 
         gameManager.GetComponent<GameManagerScript>().types.Clear();
+        gameManager.GetComponent<GameManagerScript>().levels.Clear();
+
         GameObject[] icons = GameObject.FindGameObjectsWithTag("Enemy Icon");
         foreach(GameObject icon in icons)
         {
             gameManager.GetComponent<GameManagerScript>().types.Add(icon.GetComponent<EnemyIcon>().theType);
+            gameManager.GetComponent<GameManagerScript>().levels.Add(icon.GetComponent<EnemyIcon>().level);
         }
     }
 

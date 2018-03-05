@@ -143,6 +143,7 @@ MonoBehaviour:
   testPrefab: {fileID: 1481558847177836, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
   enemyAmount: 0
   types: 
+  levels: 
 --- !u!4 &95744154
 Transform:
   m_ObjectHideFlags: 0

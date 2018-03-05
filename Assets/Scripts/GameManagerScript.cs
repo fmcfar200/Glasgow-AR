@@ -12,6 +12,8 @@ public class GameManagerScript : MonoBehaviour {
 
     public int enemyAmount;
     public List<EnemyIcon.Type> types = new List<EnemyIcon.Type>();
+    public List<int> levels = new List<int>();
+
 
     Scene theScene;
 

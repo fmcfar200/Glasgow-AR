@@ -16,7 +16,6 @@ public class EnemyInfo : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        level = 1;
         maxHealth = 75 + (25 * level);
         currentHealth = maxHealth;
         levelText.text = "Lvl: " + level.ToString();
@@ -26,8 +25,9 @@ public class EnemyInfo : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log(currentHealth);
         float healthBarFlt = (float)currentHealth/(float)maxHealth;
         healthBar.fillAmount = healthBarFlt;
-	}
+
+
+    }
 }
