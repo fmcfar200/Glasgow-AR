@@ -6,15 +6,37 @@ public class PlayerInfo : MonoBehaviour {
 
     private int maxHealth;
     private int maxMana;
+    private int maxXP;
+
 
     public int currentHealth;
     public int currentMana;
 
+    public int currentXP;
+    public int currentLevel;
+
+    GameObject gameManagerObj;
+
+
 	// Use this for initialization
 	void Start ()
     {
-        maxHealth = 100;
-        maxMana = 100;
+        gameManagerObj = GameObject.FindGameObjectWithTag("Game Manager");
+        if (gameManagerObj != null)
+        {
+            currentLevel = gameManagerObj.GetComponent<GameManagerScript>().playerLevel;
+            currentXP = gameManagerObj.GetComponent<GameManagerScript>().currentXP;
+
+        }
+        else
+        {
+            Debug.LogError("Cant find game manager");
+        }
+
+        maxXP = currentLevel * 100;
+
+        maxHealth = 100 + (25*currentLevel);
+        maxMana = 100 + (20*currentLevel);
 
         currentHealth = maxHealth;
         currentMana = maxMana;
@@ -24,6 +46,34 @@ public class PlayerInfo : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		
+		if (currentXP > maxXP)
+        {
+            LevelUp();
+
+        }
 	}
+
+
+    public void GiveXP(int amount)
+    {
+        
+        currentXP += amount;
+        
+    }
+
+    public void SaveLevel()
+    {
+        gameManagerObj.GetComponent<GameManagerScript>().playerLevel = currentLevel;
+        gameManagerObj.GetComponent<GameManagerScript>().currentXP = currentXP;
+
+        gameManagerObj.GetComponent<GameManagerScript>().SaveData();
+
+    }
+
+    void LevelUp()
+    {
+        currentLevel++;
+        maxXP = currentLevel * 100;
+        SaveLevel();
+    }
 }

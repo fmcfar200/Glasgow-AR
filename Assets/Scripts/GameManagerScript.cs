@@ -14,10 +14,14 @@ public class GameManagerScript : MonoBehaviour {
     public List<EnemyIcon.Type> types = new List<EnemyIcon.Type>();
     public List<int> levels = new List<int>();
 
+    public int playerLevel;
+    public int currentXP;
+    bool dataLoaded = false;
+
 
     Scene theScene;
 
-	void Start()
+	void Awake()
 	{
         theScene = SceneManager.GetActiveScene();
 
@@ -30,8 +34,11 @@ public class GameManagerScript : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+        LoadData();
         
-	}
+
+    }
 
     void Update()
     {
@@ -49,6 +56,39 @@ public class GameManagerScript : MonoBehaviour {
 
         }
 
+    }
+    void LoadData()
+    {
+        if (!dataLoaded)
+        {
+            if (PlayerPrefs.HasKey("playerLevel"))
+            {
+                playerLevel = PlayerPrefs.GetInt("playerLevel");
+
+                Debug.Log("level found: " + PlayerPrefs.GetInt("playerLevel"));
+            }
+            else
+            {
+                playerLevel = 1;
+            }
+
+            if (PlayerPrefs.HasKey("playerXP"))
+            {
+                currentXP = PlayerPrefs.GetInt("playerXP");
+                Debug.Log("xp found");
+
+            }
+            else
+            {
+                currentXP = 0;
+            }
+            dataLoaded = true;
+        }
+    }
+    public void SaveData()
+    {
+        PlayerPrefs.SetInt("playerLevel", playerLevel);
+        PlayerPrefs.SetInt("playerXP", currentXP);
     }
 
     public void ReloadScene()

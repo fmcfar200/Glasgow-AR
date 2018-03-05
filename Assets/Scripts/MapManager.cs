@@ -119,6 +119,21 @@ public class MapManager : MonoBehaviour {
 
             int randomIndex = Random.Range(0, enemyIcons.Count);
             GameObject icon = GameObject.Instantiate(enemyIcons[randomIndex], enemyIconPos, Quaternion.identity);
+
+            int playerLevel = player.GetComponent<PlayerInfo>().currentLevel;
+            int enemyLevel;
+            if (playerLevel > 1)
+            {
+                 enemyLevel = Random.Range(playerLevel - 1, playerLevel + 2);
+
+            }
+            else
+            {
+                 enemyLevel = Random.Range(playerLevel, playerLevel + 2);
+
+            }
+
+            icon.GetComponent<EnemyIcon>().level = enemyLevel;
             icon.tag = "Enemy Icon";
             enemyAmount++;
         }

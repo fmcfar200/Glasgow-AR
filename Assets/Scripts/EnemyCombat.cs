@@ -16,6 +16,7 @@ public class EnemyCombat : MonoBehaviour {
     PlayerInfo playerInfo;
 
     bool playerTurn;
+    bool giveXP = false;
 
     Shader defaultShader, targetShader;
 
@@ -125,7 +126,17 @@ public class EnemyCombat : MonoBehaviour {
         {
             playerCombat.ClearTarget();
         }
+
+        if (!giveXP)
+        {
+            giveXP = true;
+            playerInfo.GiveXP(enemyInfo.level * 100 / 2);
+
+        }
+        playerInfo.SaveLevel();
+
         StartCoroutine(WaitandDestroy(3.0f));
+
 
     }
 
