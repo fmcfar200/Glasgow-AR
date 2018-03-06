@@ -48,6 +48,7 @@ public class UIScript : MonoBehaviour {
 
     public void FireButton()
     {
+       
         playerCombat.fire = true;
     }
     public void StunButton()
@@ -82,11 +83,14 @@ public class UIScript : MonoBehaviour {
                 }
             }
 
+ 
             if (playerCombat.myTurn == true)
             {
                 playerHealthBar.fillAmount = (float)playerInfo.currentHealth / (float)playerInfo.maxHealth;
                 manaBar.fillAmount = (float)playerInfo.currentMana / (float)playerInfo.maxMana;
             }
+
+            CheckAvaiable();
 
             playerLevelText.text = playerInfo.currentLevel.ToString();
            
@@ -95,5 +99,40 @@ public class UIScript : MonoBehaviour {
         {
             playerLevelText.text = GameObject.FindGameObjectWithTag("PlayerIcon").GetComponent<PlayerInfo>().currentLevel.ToString();
         }
+    }
+
+    void CheckAvaiable()
+    {
+        if (playerInfo.currentMana >= playerCombat.fireCost)
+        {
+            buttons[0].interactable = true;
+        }
+        else
+        {
+            buttons[0].interactable = false;
+        }
+
+        if (playerInfo.currentMana >= playerCombat.stunCost)
+        {
+            buttons[1].interactable = true;
+
+        }
+        else
+        {
+            buttons[1].interactable = false;
+
+        }
+
+        if (playerInfo.currentMana >= playerCombat.poisonCost)
+        {
+            buttons[2].interactable = true;
+
+        }
+        else
+        {
+            buttons[2].interactable = false;
+
+        }
+
     }
 }

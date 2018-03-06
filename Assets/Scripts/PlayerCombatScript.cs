@@ -16,6 +16,9 @@ public class PlayerCombatScript : MonoBehaviour {
 
 
     public bool fire, stun, poison, endTurn;
+    public int fireCost = 30;
+    public int stunCost = 50;
+    public int poisonCost = 70;
     private float fireSpeed = 6.0f;
 
     public GameObject fireballPrefab;
