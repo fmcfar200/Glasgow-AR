@@ -112,8 +112,8 @@ public class MapManager : MonoBehaviour {
             Vector3 enemyIconPos = Conversions.GeoToWorldPosition(enemyLatLon, map.CenterMercator, map.WorldRelativeScale).ToVector3xz();
 
             float randomX, randomZ;
-            randomX = Random.Range(-2.6f, 2.6f);
-            randomZ = Random.Range(-2.6f, 2.6f);
+            randomX = Random.Range(-3.6f, 3.6f);
+            randomZ = Random.Range(-3.6f, 3.6f);
             enemyIconPos.x += randomX;
             enemyIconPos.z += randomZ;
 

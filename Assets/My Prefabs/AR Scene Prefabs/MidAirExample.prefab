@@ -1366,6 +1366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d2a75a29bbd0440ae9f3d74de77e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poisoned: 0
   currentState: 0
 --- !u!114 &114191682375743186
 MonoBehaviour:

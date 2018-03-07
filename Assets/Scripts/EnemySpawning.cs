@@ -34,7 +34,7 @@ public class EnemySpawning : MonoBehaviour
                 foreach (EnemyIcon.Type type in theTypes)
                 {
                    GameObject thisEnemy;
-                   Vector3 randomPos = Random.insideUnitSphere * 6;
+                   Vector3 randomPos = Random.insideUnitSphere * 5;
                    randomPos.y = 0.25f;
 
                    if (type == EnemyIcon.Type.BAT)
@@ -64,5 +64,8 @@ public class EnemySpawning : MonoBehaviour
             spawnedObjects.Clear();
            
         }
+
 	}
+
+   
 }
