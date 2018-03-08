@@ -281,8 +281,8 @@
      <None Include="Assets\Vuforia\Shaders\CameraDiffuse.shader" />
      <None Include="Assets\link.xml" />
      <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
-     <None Include="Assets\Mapbox\Fonts\OpenSansLic.txt" />
      <None Include="Assets\StreamingAssets\Vuforia\ImageDatabase.xml" />
+     <None Include="Assets\Mapbox\Fonts\OpenSansLic.txt" />
      <None Include="Assets\Mapbox\README.txt" />
      <None Include="Assets\Vuforia\Shaders\OutlineOpaque.shader" />
      <None Include="Assets\readme_SDK.txt" />
