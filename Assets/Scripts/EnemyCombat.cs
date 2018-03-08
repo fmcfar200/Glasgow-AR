@@ -193,7 +193,7 @@ public class EnemyCombat : MonoBehaviour {
     void UpdateShader()
     {
         GameObject child;
-        if (this.gameObject.name == "Bat_Red" || this.gameObject.name == "Ghost_Green")
+        if (this.gameObject.name == "Bat_Red" || this.gameObject.name == "Ghost_Green" || this.gameObject.name == "Slime_Blue")
         {
             child = this.transform.Find("Mesh").gameObject;
         }
