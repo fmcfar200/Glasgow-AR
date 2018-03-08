@@ -135,7 +135,16 @@ public class EnemyCombat : MonoBehaviour {
 
             }
 
-            StartCoroutine(WaitandEndTurn(animator.GetCurrentAnimatorStateInfo(0).length - 0.5f));
+            if (this.gameObject.name == "Infernal_Dog")
+            {
+                StartCoroutine(WaitandEndTurn(animator.GetCurrentAnimatorStateInfo(0).length - 24f));
+
+            }
+            else
+            {
+                StartCoroutine(WaitandEndTurn(animator.GetCurrentAnimatorStateInfo(0).length - 0.5f));
+
+            }
             playerInfo.currentHealth -= randomAmount;
             
             hit = true;
@@ -193,7 +202,7 @@ public class EnemyCombat : MonoBehaviour {
     void UpdateShader()
     {
         GameObject child;
-        if (this.gameObject.name == "Bat_Red" || this.gameObject.name == "Ghost_Green" || this.gameObject.name == "Slime_Blue" ||this.gameObject.name == "Warrior")
+        if (this.gameObject.name == "Bat_Red" || this.gameObject.name == "Ghost_Green" || this.gameObject.name == "Slime_Blue" ||this.gameObject.name == "Warrior" || this.gameObject.name == "Infernal_Dog")
         {
             child = this.transform.Find("Mesh").gameObject;
         }
