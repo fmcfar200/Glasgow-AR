@@ -10,6 +10,7 @@ TagManager:
   - Map
   - Game Manager
   - Enemy Icon
+  - DMenu
   layers:
   - Default
   - TransparentFX

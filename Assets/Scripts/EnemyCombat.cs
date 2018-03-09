@@ -120,7 +120,7 @@ public class EnemyCombat : MonoBehaviour {
         animator.SetInteger("Stunned", 0);
         animator.SetInteger("Attack", 1);
         
-        int randomAmount = Random.Range(18, 28);
+        int randomAmount = Random.Range(18, 28) + (enemyInfo.level);
 
         if (!hit)
         {

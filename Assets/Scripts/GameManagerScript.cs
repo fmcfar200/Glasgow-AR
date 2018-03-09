@@ -18,6 +18,8 @@ public class GameManagerScript : MonoBehaviour {
     public int currentXP;
     bool dataLoaded = false;
 
+    
+
 
     Scene theScene;
 
@@ -36,8 +38,9 @@ public class GameManagerScript : MonoBehaviour {
         }
 
         LoadData();
-        
 
+        
+       
     }
 
     void Update()
@@ -48,15 +51,22 @@ public class GameManagerScript : MonoBehaviour {
             case "AR Scene":
                 Camera.main.GetComponent<VuforiaBehaviour>().enabled = true;
 
+
                 break;
             case "Map Scene":
                 Camera.main.GetComponent<VuforiaBehaviour>().enabled = false;
 
+                
                 break;
 
         }
 
+
+        
+
     }
+
+    
     void LoadData()
     {
         if (!dataLoaded)
@@ -98,5 +108,15 @@ public class GameManagerScript : MonoBehaviour {
         SceneManager.LoadScene(name);
     }
 
+    public void ClearData()
+    {
+        PlayerPrefs.DeleteAll();
+        playerLevel = 1;
+        currentXP = 0;
+    }
 
+    public void PlusOneLevel()
+    {
+        playerLevel++;
+    }
 }

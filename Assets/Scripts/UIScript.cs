@@ -18,6 +18,9 @@ public class UIScript : MonoBehaviour {
 
     Scene scene;
 
+    GameObject DevMenu;
+    bool openMenu = false;
+
     void Start()
     {
          scene = SceneManager.GetActiveScene();
@@ -30,6 +33,14 @@ public class UIScript : MonoBehaviour {
             if (playerCombat == null)
             {
                 Debug.LogError("Player combat not found");
+            }
+        }
+        else
+        {
+            if (scene.name == "Map Scene")
+            {
+                DevMenu = GameObject.FindGameObjectWithTag("DMenu");
+                DevMenu.SetActive(false);
             }
         }
 
@@ -98,7 +109,44 @@ public class UIScript : MonoBehaviour {
         else if (scene.name == "Map Scene")
         {
             playerLevelText.text = GameObject.FindGameObjectWithTag("PlayerIcon").GetComponent<PlayerInfo>().currentLevel.ToString();
+
+            if (Input.touchCount > 0)
+            {
+                foreach (Touch t in Input.touches)
+                {
+                    if (Input.GetTouch(t.fingerId).phase == TouchPhase.Stationary)
+                    {
+                        openMenu = true;
+                    }
+                    else
+                    {
+                        openMenu = false;
+                    }
+
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.L))
+            {
+                openMenu = true;
+            }
+
+
+            if (openMenu)
+            {
+                StartCoroutine(WaitandLoadDev(5.0f));
+            }
+            else
+            {
+                StopCoroutine("WaitandLoadDev");
+            }
         }
+    }
+
+    IEnumerator WaitandLoadDev(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        DevMenu.gameObject.SetActive(true);
     }
 
     void CheckAvaiable()

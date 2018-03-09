@@ -746,7 +746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &225310294
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49afc311486f6c04f82bf8c2c3acb7f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  level: 35
   currentHealth: 0
   levelText: {fileID: 1556551566}
   healthBar: {fileID: 1859106608}
@@ -2333,7 +2333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &728425311
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3133,7 +3133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &850266718
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3687,7 +3687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &983451127
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4296,6 +4296,10 @@ Prefab:
       propertyPath: level
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1764249061157570, guid: fa73ac56ff8a4f1429a22505dbc6856d, type: 2}
+      propertyPath: m_Name
+      value: Infernal_Dog
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa73ac56ff8a4f1429a22505dbc6856d, type: 2}
   m_IsPrefabParent: 0
@@ -4890,7 +4894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &1423435161
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6002,7 +6006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &1825498417
 MeshFilter:
   m_ObjectHideFlags: 0

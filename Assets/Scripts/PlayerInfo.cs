@@ -46,10 +46,14 @@ public class PlayerInfo : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if (currentXP > maxXP)
+		if (currentXP >= maxXP)
         {
             LevelUp();
 
+        }
+        else if (currentHealth <= 0)
+        {
+            Die();
         }
 	}
 
@@ -75,5 +79,18 @@ public class PlayerInfo : MonoBehaviour {
         currentLevel++;
         maxXP = currentLevel * 100;
         SaveLevel();
+    }
+
+    void Die()
+    {
+        if (currentLevel > 1)
+        {
+            currentLevel = 1;
+            currentXP = 0;
+            SaveLevel();
+
+            gameManagerObj.GetComponent<GameManagerScript>().ReloadScene();
+
+        }
     }
 }
