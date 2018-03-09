@@ -271,6 +271,7 @@
      <Compile Include="Assets\Scripts\GPSLocation.cs" />
      <Compile Include="Assets\Scripts\MapManager.cs" />
      <Compile Include="Assets\Scripts\MapSingleton.cs" />
+     <Compile Include="Assets\Scripts\MarkerIconScript.cs" />
      <Compile Include="Assets\Scripts\PlayerCombatScript.cs" />
      <Compile Include="Assets\Scripts\PlayerInfo.cs" />
      <Compile Include="Assets\Scripts\UIScript.cs" />

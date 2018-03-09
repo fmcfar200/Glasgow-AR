@@ -24,7 +24,7 @@ namespace Mapbox.Examples.LocationProvider
         [SerializeField]
         bool _useTransformLocationProvider;
 
-        bool _isInitialized;
+        public bool _isInitialized;
 
         MapManager mapManager;
 
