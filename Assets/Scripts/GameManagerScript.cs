@@ -65,7 +65,6 @@ public class GameManagerScript : MonoBehaviour {
             {
                 playerLevel = PlayerPrefs.GetInt("playerLevel");
 
-                Debug.Log("level found: " + PlayerPrefs.GetInt("playerLevel"));
             }
             else
             {
@@ -75,8 +74,6 @@ public class GameManagerScript : MonoBehaviour {
             if (PlayerPrefs.HasKey("playerXP"))
             {
                 currentXP = PlayerPrefs.GetInt("playerXP");
-                Debug.Log("xp found");
-
             }
             else
             {

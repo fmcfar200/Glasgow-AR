@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class GPSLocation : MonoBehaviour {
 
     public float lat, lon;
-    public Text infoText;
 
 
 	// Use this for initialization
@@ -30,7 +29,6 @@ public class GPSLocation : MonoBehaviour {
 
         }
 
-        infoText.text = "Location: " + lat + "  " + lon;
 
     }
 
