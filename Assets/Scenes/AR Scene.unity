@@ -746,7 +746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &225310294
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1220,6 +1220,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 1955812641947828, guid: 9e2d562daf187d24ab97f5e12dc5a2b0, type: 2}
   - {fileID: 1481558847177836, guid: 42e64e772f34ff44993cc7a9e6b01a69, type: 2}
+  - {fileID: 1304709594964888, guid: b55b4ef101c698c48b92823b8d22f5b4, type: 2}
+  - {fileID: 1506066308324172, guid: a10d1bf0b12a39147ade18fdc92ea507, type: 2}
 --- !u!1 &289540917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,7 +2333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &728425311
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3055,7 +3057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &850266718
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3609,7 +3611,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &983451127
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5998,7 +6000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &1825498417
 MeshFilter:
   m_ObjectHideFlags: 0

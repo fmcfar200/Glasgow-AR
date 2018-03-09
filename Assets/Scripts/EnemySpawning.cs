@@ -49,6 +49,18 @@ public class EnemySpawning : MonoBehaviour
                         spawnedObjects.Add(thisEnemy);
                      }
 
+                    if (type == EnemyIcon.Type.GHOST)
+                    {
+                        thisEnemy = Instantiate(enemies[2], randomPos, Quaternion.identity);
+                        spawnedObjects.Add(thisEnemy);
+                    }
+
+                    if (type == EnemyIcon.Type.SLIME)
+                    {
+                        thisEnemy = Instantiate(enemies[3], randomPos, Quaternion.identity);
+                        spawnedObjects.Add(thisEnemy);
+                     }
+
                 spawnAmount--;
                 thisEnemy = null;
       

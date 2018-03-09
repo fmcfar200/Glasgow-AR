@@ -531,6 +531,8 @@ MonoBehaviour:
   enemyIcons:
   - {fileID: 1120990662220860, guid: 3eb882f3f068f5948a412f976cdf281b, type: 2}
   - {fileID: 1352225747035780, guid: 56e150dda11b3214bb0d83135169e60a, type: 2}
+  - {fileID: 1452914622801182, guid: 60da717adef7df84bab2b92a9c6dbf49, type: 2}
+  - {fileID: 1045108977383180, guid: 6d704cfe17bd9324dae8e6bca9f2aa1c, type: 2}
 --- !u!4 &777438659
 Transform:
   m_ObjectHideFlags: 0

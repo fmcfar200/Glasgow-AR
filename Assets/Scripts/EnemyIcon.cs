@@ -6,29 +6,19 @@ using UnityEngine.UI;
 public class EnemyIcon : MonoBehaviour {
 
     public int level = 1;
-    public TextMesh levelText;
 
     public enum Type
     {
         BAT,
         SKELETON,
+        GHOST,
+        SLIME
 
     }
 
     public Type theType;
 
-
-    void Start()
-    {
-        levelText.text = "Lvl: " + level.ToString();
-
-    }
-
-    void Update()
-    {
-        LookAtCamera();
-    }
-
+  
     public Type GetType()
     {
         return theType;
@@ -39,6 +29,5 @@ public class EnemyIcon : MonoBehaviour {
         Vector3 lookPosition = Camera.main.transform.position - transform.position;
         lookPosition.z = 0;
         Quaternion theRotation = Quaternion.LookRotation(lookPosition);
-        levelText.gameObject.transform.rotation = Quaternion.Slerp(transform.rotation, theRotation, 1.0f * Time.deltaTime);
     }
 }
