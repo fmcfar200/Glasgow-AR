@@ -11,6 +11,7 @@ TagManager:
   - Game Manager
   - Enemy Icon
   - DMenu
+  - AudioManager
   layers:
   - Default
   - TransparentFX

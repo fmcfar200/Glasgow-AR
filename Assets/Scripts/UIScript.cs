@@ -21,10 +21,12 @@ public class UIScript : MonoBehaviour {
     GameObject DevMenu;
     bool openMenu = false;
 
+    AudioManager audioManager;
+
     void Start()
     {
          scene = SceneManager.GetActiveScene();
-
+         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         if (scene.name == "AR Scene")
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -51,6 +53,8 @@ public class UIScript : MonoBehaviour {
     {
         SceneManager.LoadScene(name);
     }
+
+    
 
     public void ReloadScene()
     {
