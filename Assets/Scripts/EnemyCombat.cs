@@ -7,6 +7,7 @@ public class EnemyCombat : MonoBehaviour {
     
     bool alive = true;
     bool hit = false;
+    public GameObject deathBlastPrefab;
 
     public bool poisoned = false;
     int poisonTurns = 3;
@@ -24,6 +25,10 @@ public class EnemyCombat : MonoBehaviour {
     Shader defaultShader, targetShader;
 
 
+    AudioManager audManager;
+    AudioSource aSource;
+
+
     public enum State
     {
         IDLE,
@@ -34,11 +39,23 @@ public class EnemyCombat : MonoBehaviour {
     public State currentState;
 
 
+    public enum Type
+    {
+        GRUNT,
+        BOSS
+    }
+
+    public Type myType;
+
+
     void Start()
     {
         currentState = State.IDLE;
         animator = GetComponent<Animator>();
         enemyInfo = GetComponent<EnemyInfo>();
+
+        aSource = GetComponent<AudioSource>();
+        audManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
 
         defaultShader = Shader.Find("Mobile/Diffuse");
         targetShader = Shader.Find("Outlined/Diffuse");
@@ -100,13 +117,13 @@ public class EnemyCombat : MonoBehaviour {
                 animator.SetInteger("Idle", 1);
                 break;
             case State.ATTACKING:
-                
                     Attack();
                 
                 break;
             case State.STUNNED:
                 animator.SetInteger("Idle", 0);
                 animator.SetInteger("Stunned", 1);
+              
                 break;
 
         }
@@ -146,7 +163,6 @@ public class EnemyCombat : MonoBehaviour {
 
             }
             playerInfo.currentHealth -= randomAmount;
-            
             hit = true;
 
         }
@@ -169,14 +185,40 @@ public class EnemyCombat : MonoBehaviour {
             giveXP = true;
             playerInfo.GiveXP(enemyInfo.level * 100 / 2);
 
+            if (myType != Type.GRUNT)
+            {
+                aSource.Pause();
+                aSource.PlayOneShot(audManager.winSound);
+                aSource.PlayDelayed(0);
+            }
+
         }
         playerInfo.SaveLevel();
 
-        StartCoroutine(WaitandDestroy(3.0f));
+
+        if (myType == Type.GRUNT)
+        {
+            StartCoroutine(WaitandDestroy(3.0f));
+
+        }
+        else if(myType == Type.BOSS)
+        {
+            StartCoroutine(WaitandDestroyBoss(3.0f));
+
+        }
 
 
     }
 
+    IEnumerator WaitandDestroyBoss(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        GameObject killBlast = GameObject.Instantiate(deathBlastPrefab, transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
+        yield return new WaitForSeconds(killBlast.GetComponent<ParticleSystem>().main.duration);
+        Destroy(killBlast);
+
+    }
     IEnumerator WaitandDestroy(float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -186,6 +228,8 @@ public class EnemyCombat : MonoBehaviour {
     IEnumerator WaitandEndTurn(float seconds)
     {
         yield return new WaitForSeconds(seconds);
+        aSource.PlayOneShot(audManager.fightSounds[3]);
+
         currentState = State.IDLE;
         playerTurn = true;
         playerCombat.myTurn = playerTurn;

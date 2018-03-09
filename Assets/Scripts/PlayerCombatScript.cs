@@ -30,11 +30,18 @@ public class PlayerCombatScript : MonoBehaviour {
 
     private List<GameObject> fireBallList = new List<GameObject>();
 
+    AudioSource aSource;
+    AudioManager audManager;
+
+
 	// Use this for initialization
 	void Start ()
     {
         playerInfo = GetComponent<PlayerInfo>();
         myTurn = true;
+
+        aSource = GetComponent<AudioSource>();
+        audManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
 	}
 	
 	// Update is called once per frame
@@ -98,6 +105,8 @@ public class PlayerCombatScript : MonoBehaviour {
                 theFireball = (GameObject)Instantiate(fireballPrefab, fireballPosition, Quaternion.identity) as GameObject;
                 fireBallList.Add(theFireball);
 
+                aSource.PlayOneShot(audManager.fightSounds[0]);
+
             }
 
             else if (theFireball != null)
@@ -121,7 +130,9 @@ public class PlayerCombatScript : MonoBehaviour {
                 playerInfo.currentMana -= 40;
                 Vector3 stunEffectPosition = target.transform.position;
                 theStunEffect = (GameObject)Instantiate(stunEffectPrefab, stunEffectPosition, Quaternion.identity) as GameObject;
-    
+                aSource.PlayOneShot(audManager.fightSounds[2]);
+
+
             }
             else if (theStunEffect != null)
             {
@@ -137,6 +148,9 @@ public class PlayerCombatScript : MonoBehaviour {
                 GameObject poisonEffect = (GameObject)Instantiate(poisonPrefab, target.transform.position, Quaternion.identity);
                 StartCoroutine(WaitAndDestroy((float)poisonPrefab.GetComponent<ParticleSystem>().main.duration, poisonEffect));
                 target.GetComponent<EnemyCombat>().poisoned = true;
+
+                aSource.PlayOneShot(audManager.fightSounds[2]);
+
             }
 
             if (endTurn)
