@@ -292,6 +292,7 @@
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Particles\KY_effects\MagicEffectsPackFree\ReadMe.txt" />
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
+     <None Include="Assets\StreamingAssets\Vuforia\ImageDatabase.xml" />
      <None Include="Assets\Mapbox\Core\Plugins\link.xml" />
      <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Images.xml" />
      <None Include="Assets\Resources\Mapbox\MapboxConfiguration.txt" />
@@ -300,7 +301,6 @@
      <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_VuMark.xml" />
      <None Include="Assets\Vuforia\Shaders\DepthContour.shader" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
-     <None Include="Assets\StreamingAssets\Vuforia\ImageDatabase.xml" />
  <Reference Include="Vuforia.UnityExtensions.Editor">
  <HintPath>C:/Program Files/Unity 2017.3.1/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
  </Reference>

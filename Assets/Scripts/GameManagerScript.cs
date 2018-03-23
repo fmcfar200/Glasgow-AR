@@ -117,6 +117,8 @@ public class GameManagerScript : MonoBehaviour {
 
     public void PlusOneLevel()
     {
-        playerLevel++;
+        GameObject player = GameObject.FindGameObjectWithTag("PlayerIcon");
+        PlayerInfo info = player.GetComponent<PlayerInfo>();
+        info.LevelUp();
     }
 }

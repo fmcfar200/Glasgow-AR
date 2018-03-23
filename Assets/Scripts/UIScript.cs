@@ -114,6 +114,7 @@ public class UIScript : MonoBehaviour {
         {
             playerLevelText.text = GameObject.FindGameObjectWithTag("PlayerIcon").GetComponent<PlayerInfo>().currentLevel.ToString();
 
+            /*
             if (Input.touchCount > 0)
             {
                 foreach (Touch t in Input.touches)
@@ -133,25 +134,32 @@ public class UIScript : MonoBehaviour {
             {
                 openMenu = true;
             }
-
+            */
 
             if (openMenu)
             {
-                StartCoroutine(WaitandLoadDev(5.0f));
+                DevMenu.gameObject.SetActive(true);
             }
             else
             {
-                StopCoroutine("WaitandLoadDev");
+                DevMenu.gameObject.SetActive(false);
             }
         }
     }
 
-    IEnumerator WaitandLoadDev(float seconds)
+    public void setMenuopen()
     {
-        yield return new WaitForSeconds(seconds);
-
-        DevMenu.gameObject.SetActive(true);
+        if (openMenu)
+        {
+            openMenu = false;
+        }
+        else
+        {
+            openMenu = true;
+        }
     }
+
+   
 
     void CheckAvaiable()
     {

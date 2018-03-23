@@ -74,7 +74,7 @@ public class PlayerInfo : MonoBehaviour {
 
     }
 
-    void LevelUp()
+    public void LevelUp()
     {
         currentLevel++;
         maxXP = currentLevel * 100;
