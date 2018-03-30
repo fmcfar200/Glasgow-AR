@@ -99,7 +99,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4745165810453440}
   - component: {fileID: 114842881829680016}
-  - component: {fileID: 82835606109622360}
   m_Layer: 8
   m_Name: MidAirGhost
   m_TagString: Untagged
@@ -135,6 +134,7 @@ GameObject:
   - component: {fileID: 135537407915274548}
   - component: {fileID: 114273612074248262}
   - component: {fileID: 114038186011942506}
+  - component: {fileID: 82346568129605854}
   m_Layer: 8
   m_Name: Ghost_Green
   m_TagString: enemy
@@ -469,12 +469,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!82 &82835606109622360
+--- !u!82 &82346568129605854
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1304709594964888}
+  m_GameObject: {fileID: 1467419679473264}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}

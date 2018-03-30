@@ -6,11 +6,12 @@ public class EnemySpawning : MonoBehaviour
 {
 
     GameObject gameManager;
+
+    int spawnAmount;
     List<EnemyIcon.Type> theTypes;
     List<int> theLevels;
 
     public List<GameObject> enemies = new List<GameObject>();
-    int spawnAmount;
 
     void Awake()
     {
@@ -40,7 +41,7 @@ public class EnemySpawning : MonoBehaviour
                    if (type == EnemyIcon.Type.BAT)
                      {
                         thisEnemy = Instantiate(enemies[0], randomPos, Quaternion.identity);
-                    spawnedObjects.Add(thisEnemy);
+                        spawnedObjects.Add(thisEnemy);
                      }
 
                    if (type == EnemyIcon.Type.SKELETON)

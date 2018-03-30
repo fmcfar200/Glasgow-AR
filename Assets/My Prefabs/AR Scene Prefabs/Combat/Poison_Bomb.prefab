@@ -19,8 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4670114261091400}
-  - component: {fileID: 108714092035909704}
-  - component: {fileID: 114566773674679432}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -70,8 +68,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4735033493189268}
-  - component: {fileID: 108797841236675074}
-  - component: {fileID: 114512895359906988}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -227,126 +223,6 @@ Transform:
   m_Father: {fileID: 4594120891067678}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &108714092035909704
-Light:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1139204879166120}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 2
-  m_Color: {r: 0.7254902, g: 1, b: 0.7955375, a: 1}
-  m_Intensity: 3
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 1
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!108 &108797841236675074
-Light:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1394889858259454}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 2
-  m_Color: {r: 0.7254902, g: 1, b: 0.7955375, a: 1}
-  m_Intensity: 2
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 1
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!114 &114512895359906988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1394889858259454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bf07bd4d8e774eb48e7273353252009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lighting: 0.2
-  lightPower: {fileID: 0}
-  flashFlg: 0
-  flashTimer: 0.3
-  revOnTime: 0
-  keepOnTime: 0
-  keepTime: 0
-  flashingFlg: 0
-  minLight: 0
-  maxLight: 1
-  flashingOff: 0
-  flashingOffPower: 0
-  flashingOffIntensity: 1
---- !u!114 &114566773674679432
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1139204879166120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bf07bd4d8e774eb48e7273353252009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lighting: 2
-  lightPower: {fileID: 0}
-  flashFlg: 1
-  flashTimer: 3.3
-  revOnTime: 0
-  keepOnTime: 0
-  keepTime: 0
-  flashingFlg: 0
-  minLight: 0
-  maxLight: 1
-  flashingOff: 0
-  flashingOffPower: 0
-  flashingOffIntensity: 1
 --- !u!198 &198719256753534832
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -575,7 +451,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -616,7 +492,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:

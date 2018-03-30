@@ -116,7 +116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4728292821923738}
   - component: {fileID: 114227641480276622}
-  - component: {fileID: 82564056859399516}
   m_Layer: 8
   m_Name: MidAirSlime
   m_TagString: Untagged
@@ -184,6 +183,7 @@ GameObject:
   - component: {fileID: 135692831438307882}
   - component: {fileID: 114590501665871088}
   - component: {fileID: 114643162391032024}
+  - component: {fileID: 82164684177886776}
   m_Layer: 8
   m_Name: Slime_Blue
   m_TagString: enemy
@@ -614,12 +614,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!82 &82564056859399516
+--- !u!82 &82164684177886776
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1506066308324172}
+  m_GameObject: {fileID: 1670873476028322}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}

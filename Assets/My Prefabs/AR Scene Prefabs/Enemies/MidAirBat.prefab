@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 65202153190773450}
   - component: {fileID: 114298481146265812}
   - component: {fileID: 114029337693648570}
+  - component: {fileID: 82721129442430510}
   m_Layer: 8
   m_Name: Bat_Red
   m_TagString: enemy
@@ -694,7 +695,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4837865420933686}
   - component: {fileID: 114226223547820258}
-  - component: {fileID: 82090285931378410}
   m_Layer: 8
   m_Name: MidAirBat
   m_TagString: Untagged
@@ -1438,12 +1438,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020553013, y: 0.017284403, z: 0.01}
   m_Center: {x: 0.000047290327, y: 0.035, z: 0}
---- !u!82 &82090285931378410
+--- !u!82 &82721129442430510
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1955812641947828}
+  m_GameObject: {fileID: 1409119256457756}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}

@@ -45,7 +45,7 @@ public class AudioManager : MonoBehaviour {
 
     void Update()
     {
-        if (player.GetComponent<PlayerCombatScript>().GetTarget() != null && hasSwitched == false)
+        if (scene.name == "AR Scene" && player.GetComponent<PlayerCombatScript>().GetTarget() != null && hasSwitched == false)
         {
             hasSwitched = true;
             GetComponent<AudioSource>().Stop();

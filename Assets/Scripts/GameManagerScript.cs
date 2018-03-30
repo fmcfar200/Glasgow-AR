@@ -6,7 +6,7 @@ using Vuforia;
 
 public class GameManagerScript : MonoBehaviour {
 
-    public static GameManagerScript manager;
+    public static GameManagerScript instance;
 
     public GameObject testPrefab;
 
@@ -27,20 +27,17 @@ public class GameManagerScript : MonoBehaviour {
 	{
         theScene = SceneManager.GetActiveScene();
 
-        if (manager == null)
+        if (instance == null)
         {
             DontDestroyOnLoad(gameObject);
-            manager = this;
+            instance = this;
         }
-        else if (manager != this)
+        else if (instance != this)
         {
             Destroy(gameObject);
         }
 
         LoadData();
-
-        
-       
     }
 
     void Update()
@@ -50,19 +47,11 @@ public class GameManagerScript : MonoBehaviour {
         {
             case "AR Scene":
                 Camera.main.GetComponent<VuforiaBehaviour>().enabled = true;
-
-
                 break;
             case "Map Scene":
                 Camera.main.GetComponent<VuforiaBehaviour>().enabled = false;
-
-                
                 break;
-
         }
-
-
-        
 
     }
 
@@ -74,7 +63,6 @@ public class GameManagerScript : MonoBehaviour {
             if (PlayerPrefs.HasKey("playerLevel"))
             {
                 playerLevel = PlayerPrefs.GetInt("playerLevel");
-
             }
             else
             {
@@ -113,6 +101,11 @@ public class GameManagerScript : MonoBehaviour {
         PlayerPrefs.DeleteAll();
         playerLevel = 1;
         currentXP = 0;
+
+        GameObject player = GameObject.FindGameObjectWithTag("PlayerIcon");
+        PlayerInfo info = player.GetComponent<PlayerInfo>();
+        info.currentLevel = playerLevel;
+        info.currentXP = currentXP;
     }
 
     public void PlusOneLevel()

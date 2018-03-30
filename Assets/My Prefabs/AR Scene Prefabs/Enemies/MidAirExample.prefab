@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 136367163680269582}
   - component: {fileID: 114874593284626250}
   - component: {fileID: 114068594557250990}
+  - component: {fileID: 82061767094833532}
   m_Layer: 8
   m_Name: Skeleton@Skin (1)
   m_TagString: enemy
@@ -371,7 +372,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4292888413309926}
   - component: {fileID: 114211956481764678}
-  - component: {fileID: 82177987608188246}
   m_Layer: 8
   m_Name: MidAirExample
   m_TagString: Untagged
@@ -1316,12 +1316,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!82 &82177987608188246
+--- !u!82 &82061767094833532
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1481558847177836}
+  m_GameObject: {fileID: 1234063069064992}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}

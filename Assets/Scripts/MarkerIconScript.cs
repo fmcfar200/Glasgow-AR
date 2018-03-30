@@ -17,8 +17,6 @@ public class MarkerIconScript : MonoBehaviour {
     Vector2d enemyLatLon;
     Vector3 enemyIconPos;
 
-    bool inPosition =  false;
-
     void Update()
     {
         enemyLatLon = new Vector2d((double)Lat, (double)Lon);

@@ -26,7 +26,6 @@ public class GPSLocation : MonoBehaviour {
         {
             lat = Input.location.lastData.latitude;
             lon = Input.location.lastData.longitude;
-
         }
 
 

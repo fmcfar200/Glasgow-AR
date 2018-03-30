@@ -515,7 +515,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4724918662217898, guid: 7569cd60dfff7074494055d83ad867c5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -15.550828
+      value: -39.926754
       objectReference: {fileID: 0}
     - target: {fileID: 4724918662217898, guid: 7569cd60dfff7074494055d83ad867c5, type: 2}
       propertyPath: m_LocalPosition.y
@@ -632,7 +632,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4677299264001290, guid: 33b4a102b9eb8dc4d8d8cf3b167beb17, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -20.964073
+      value: -45.34
       objectReference: {fileID: 0}
     - target: {fileID: 4677299264001290, guid: 33b4a102b9eb8dc4d8d8cf3b167beb17, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2189,7 +2189,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4257252858831884, guid: f51d7da862543194cba913a414599103, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -17.32
+      value: -41.695927
       objectReference: {fileID: 0}
     - target: {fileID: 4257252858831884, guid: f51d7da862543194cba913a414599103, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2985,7 +2985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60712efc3153a4819b0c79437175846d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _latitudeLongitude: 55.817137, -4.533354
+  _latitudeLongitude: 55.8625, -4.254167
   _heading: 0
 --- !u!4 &1723143101
 Transform:
@@ -3887,7 +3887,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4652905890194248, guid: 73b5ae9f012a07b49894bcbdecf23ab6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -20.01
+      value: -44.385925
       objectReference: {fileID: 0}
     - target: {fileID: 4652905890194248, guid: 73b5ae9f012a07b49894bcbdecf23ab6, type: 2}
       propertyPath: m_LocalPosition.y

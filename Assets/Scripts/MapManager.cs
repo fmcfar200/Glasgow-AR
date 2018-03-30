@@ -19,8 +19,8 @@ public class MapManager : MonoBehaviour {
     public GameObject player;
 
     private float pLat, pLon;
-    float lastLat;
-    float lastLon;
+    private float lastLat;
+    private float lastLon;
 
     public int enemyAmount = 0;
     public bool moved = false;
@@ -42,7 +42,6 @@ public class MapManager : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
     void Start ()
     {
 
@@ -69,12 +68,12 @@ public class MapManager : MonoBehaviour {
 
     }
  
-    // Update is called once per frame
     void Update()
     {
         
       if (player != null && map != null)
       {
+          
           pLat = player.GetComponent<GPSLocation>().lat;
           pLon = player.GetComponent<GPSLocation>().lon;
 
@@ -103,14 +102,17 @@ public class MapManager : MonoBehaviour {
     {
         Debug.Log("Location Update");
        
-
+        // inital enemy Lat and Lon is set to the player lat lon
         Vector2d enemyLatLon = new Vector2d((double)pLat, (double)pLon);
-        int spawnAmount = Random.Range(2, 6);
+        int spawnAmount = Random.Range(1, 5);   //random spawn amount
 
+        //spawn enemies 
         for(int i = 0; i < spawnAmount; i++)
         {
-            Vector3 enemyIconPos = Conversions.GeoToWorldPosition(enemyLatLon, map.CenterMercator, map.WorldRelativeScale).ToVector3xz();
+            Vector3 enemyIconPos = Conversions.GeoToWorldPosition
+                (enemyLatLon, map.CenterMercator, map.WorldRelativeScale).ToVector3xz();   //converts geo pos to unity world pos on the map
 
+            //randomize the x and z vals of enemy pos
             float randomX, randomZ;
             randomX = Random.Range(-3.6f, 3.6f);
             randomZ = Random.Range(-3.6f, 3.6f);
@@ -161,17 +163,18 @@ public class MapManager : MonoBehaviour {
     {
         gameManager.GetComponent<GameManagerScript>().enemyAmount = enemyAmount;
 
-
         gameManager.GetComponent<GameManagerScript>().types.Clear();
         gameManager.GetComponent<GameManagerScript>().levels.Clear();
 
         GameObject[] icons = GameObject.FindGameObjectsWithTag("Enemy Icon");
         foreach(GameObject icon in icons)
         {
-            gameManager.GetComponent<GameManagerScript>().types.Add(icon.GetComponent<EnemyIcon>().theType);
-            gameManager.GetComponent<GameManagerScript>().levels.Add(icon.GetComponent<EnemyIcon>().level);
+            gameManager.GetComponent<GameManagerScript>().types.
+                Add(icon.GetComponent<EnemyIcon>().theType);
+
+            gameManager.GetComponent<GameManagerScript>().levels.
+                Add(icon.GetComponent<EnemyIcon>().level);
         }
     }
-
 }
 
