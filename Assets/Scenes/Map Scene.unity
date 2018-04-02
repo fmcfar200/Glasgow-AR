@@ -2985,7 +2985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60712efc3153a4819b0c79437175846d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _latitudeLongitude: 55.8625, -4.254167
+  _latitudeLongitude: 55.8672, -4.25016
   _heading: 0
 --- !u!4 &1723143101
 Transform:

@@ -36,7 +36,7 @@ public class EnemySpawning : MonoBehaviour
                 {
                    GameObject thisEnemy;
                    Vector3 randomPos = Random.insideUnitSphere * 5;
-                   randomPos.y = 0.25f;
+                   randomPos.y = 0.2f;
 
                    if (type == EnemyIcon.Type.BAT)
                      {
@@ -69,8 +69,10 @@ public class EnemySpawning : MonoBehaviour
 
                 for(int i = 0; i < spawnedObjects.Count;i++)
                 {
-                Debug.Log(theLevels[i] + " ");
-                    spawnedObjects[i].transform.GetChild(0).GetComponent<EnemyInfo>().level = theLevels[i];
+                    Debug.Log(theLevels[i] + " ");
+
+                    spawnedObjects[i].transform.GetChild(0).
+                    GetComponent<EnemyInfo>().level = theLevels[i];
                 }
                 
             spawnAmount = 0;
