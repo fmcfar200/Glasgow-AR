@@ -106,6 +106,9 @@ public class GameManagerScript : MonoBehaviour {
         PlayerInfo info = player.GetComponent<PlayerInfo>();
         info.currentLevel = playerLevel;
         info.currentXP = currentXP;
+
+        SaveData();
+
     }
 
     public void PlusOneLevel()

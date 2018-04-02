@@ -443,9 +443,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: bca6ffff
-    m_LastClickedID: -22852
-    m_ExpandedIDs: 9efbffff000000007c3a0000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 9efbffff00000000923a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.6322869, y: 0.0639353, z: -0.052479774, w: 0.770306}
     speed: 2
-    m_Value: {x: 0.63228697, y: 0.06393531, z: -0.052479777, w: 0.77030605}
+    m_Value: {x: -0.63228685, y: -0.0639353, z: 0.05247977, w: -0.77030593}
   m_Size:
     m_Target: 57.15768
     speed: 2
